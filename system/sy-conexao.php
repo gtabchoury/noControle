@@ -1,6 +1,8 @@
 <?php
 	
 	$host = 'localhost';
+	$usuario = 'nocontrole';
+	$senha = 'conpec_nocontrole';
 	$database = 'nocontrole';
 
 	$mysqli = new mysqli($host, $usuario, $senha, $database);
