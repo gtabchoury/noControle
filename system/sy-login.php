@@ -1,6 +1,6 @@
 <?php
 
- include("conexao.php");
+ include("sy-conexao.php");
  ini_set('default_charset','UTF-8');
 
  if (!isset($_SESSION)){
@@ -25,7 +25,8 @@
         $stmt->bind_result($hash, $user_id, $user_name);
 
         if ($stmt->fetch()){
-            $crypt_senha = crypt($senha, $hash);
+            $crypt_senha = crypt($senha,$hash);
+    
             if ($crypt_senha==$hash){
                 $_SESSION['usuario_id'] = $user_id;
                 $_SESSION['usuario_nome'] = $user_name;
@@ -34,21 +35,23 @@
                 echo "login efetuado";
             }else{
                 $_SESSION['erro']=1;
-                header('location:../login.php');
+                echo "<script>javascript:history.back();</script>";
             }
-        }else{ 
+        }else{
             $_SESSION['erro']=1;
-            header('location:../login.php');
+            echo "<script>javascript:history.back();</script>";
         }
 
         $stmt->close();
     
     }else{
         echo "<script> alert('Senha inválida!');</script>";
+        header('location:../login.php');
     }
     
  }else{
      echo "<script> alert('Email inválido!');</script>";
+     header('location:../login.php');
  }
 
 ?>

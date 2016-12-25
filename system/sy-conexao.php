@@ -1,8 +1,6 @@
 <?php
 	
 	$host = 'localhost';
-	$usuario = 'root';
-	$senha = '';
 	$database = 'nocontrole';
 
 	$mysqli = new mysqli($host, $usuario, $senha, $database);
