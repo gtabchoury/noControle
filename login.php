@@ -15,12 +15,17 @@ if (isset($_GET['success'])){
     $cadastrado=0;
 }
 
+if (isset($_GET['erro'])){
+    $erro=$_GET['erro'];
+}else{
+    $erro=0;
+}
+
 if (!isset($_SESSION)){
-    $_SESSION['erro']=0;
     session_start();
 }else{
     if (isset($_SESSION['usuario_id'])){
-       $query = "SELECT * FROM nc_users WHERE user_id=? ";
+        $query = "SELECT * FROM nc_users WHERE user_id=? ";
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param('i', $_SESSION['usuario_id']);
         $stmt->execute();
@@ -29,11 +34,11 @@ if (!isset($_SESSION)){
             //echo "<script>location.href='inicio.php';</script>";
         }else{
             session_destroy();
+            header('location:login.php');
         }
         
     }
 }
-
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -51,6 +56,7 @@ if (!isset($_SESSION)){
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-body">
+                    <br>
                     <div align="center">
                         <h3>Conecte-se</h3>
                     </div>
@@ -60,8 +66,8 @@ if (!isset($_SESSION)){
                     </div>
                     
                     <?php
-                        if (isset($_SESSION['erro'])){
-                            if ($_SESSION['erro']==1){
+                        if (isset($erro)){
+                            if ($erro==1){
                                 echo "
                                 <br>
                                 <div class='alert alert-danger alert-dismissable'>
@@ -70,7 +76,7 @@ if (!isset($_SESSION)){
 
 
                                 ";
-                                $_SESSION['erro']=0;
+                                $erro=0;
                             }else{
                                 if ($cadastrado==1){
                                     echo "
@@ -80,7 +86,8 @@ if (!isset($_SESSION)){
                                     </div>  
 
                                     ";
-                                } 
+                                    $cadastrado=0;
+                                    } 
                             } 
                             
                         }
@@ -108,7 +115,7 @@ if (!isset($_SESSION)){
                                 </div>
                                 <div class="form-group" align="center">
                                     <p>
-                                        <a href="/forgot.php">Esqueci minha senha</a>
+                                        <a href="recuperarSenha.php">Esqueci minha senha</a>
                                     </p>
                                 </div>
                             </fieldset>

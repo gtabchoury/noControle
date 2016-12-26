@@ -11,8 +11,6 @@
      
     if (isset($_POST['senha'])){
         
-
-        $_SESSION['erro']=0;
         $_SESSION['email'] = $mysqli->escape_string($_POST['email']);
         $senha = $_POST['senha'];
 
@@ -30,28 +28,23 @@
             if ($crypt_senha==$hash){
                 $_SESSION['usuario_id'] = $user_id;
                 $_SESSION['usuario_nome'] = $user_name;
-                $_SESSION['erro']=0;
                 //echo "<script>location.href='../inicio.php';</script>";
                 echo "login efetuado";
             }else{
-                $_SESSION['erro']=1;
-                echo "<script>javascript:history.back();</script>";
+                echo "<script>location.href='../login.php?erro=1';</script>";
             }
         }else{
-            $_SESSION['erro']=1;
-            echo "<script>javascript:history.back();</script>";
+            echo "<script>location.href='../login.php?erro=1';</script>";
         }
 
         $stmt->close();
     
     }else{
-        echo "<script> alert('Senha inválida!');</script>";
-        header('location:../login.php');
+        echo "<script>location.href='../login.php?erro=1';</script>";
     }
     
  }else{
-     echo "<script> alert('Email inválido!');</script>";
-     header('location:../login.php');
+     echo "<script>location.href='../login.php?erro=1';</script>";
  }
 
 ?>
