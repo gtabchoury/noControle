@@ -1,4 +1,9 @@
-    <script src="static/lib/jquery/dist/jquery.min.js"></script>
-    <script src="static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="static/lib/bootstrapValidator/dist/js/bootstrapValidator.min.js"></script>
-    <script src="static/js/login.js"></script>
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>

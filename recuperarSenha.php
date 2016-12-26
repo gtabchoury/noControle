@@ -99,14 +99,16 @@ if (!isset($_SESSION)){
                         }
                         
                         ?>
-                        
+                        <div align="center">
+                            <a href="login.php"><button class="btn btn-primary">Voltar para o Login</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <?php include("layout/header.php");?>
+    <?php include("layout/foot.php");?>
 
 </body>
 

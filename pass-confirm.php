@@ -118,7 +118,7 @@ if (!isset($_SESSION)){
         </div>
     </div>
     
-    <?php include("layout/header.php");?>
+    <?php include("layout/foot.php");?>
 
 </body>
 
