@@ -15,32 +15,43 @@ if (isset($_POST['userName'])){
             
             if (isset($_POST['userPasswordConfirm'])){
                 
-                $userName = $_POST['userName'];
-                $userEmail = $_POST['userEmail'];
-                $password = $_POST['userPassword'];
-                $passwordConfirm = $_POST['userPasswordConfirm'];
-                
-                if ($password==$passwordConfirm){
-                    $userPassword = crypt($password);
+                $query = "SELECT user_name from nc_users WHERE user_email=? ";
+                $stmt = $mysqli->prepare($query);
+                $stmt->bind_param('s', $_POST['userEmail']);
+                $stmt->execute();
+                $stmt->bind_result($user_name);
 
-                    $query = "INSERT INTO `nc_users`(`user_email`, `user_name`, `user_password`) VALUES (?,?,?)";
-
-                    $stmt = $mysqli->prepare($query);
-                    $stmt->bind_param('sss',$userEmail, $userName, $userPassword);
-                    $stmt->execute();
-
-                    if ($stmt->affected_rows==1){
-                        echo "<script> location.href='../login.php?success=1';</script>";
-                    }else{
-                        echo "<script> location.href='../newUser.php?success=0';</script>";
-                    }
-
-                    $stmt->close();
-
-                    exit;
+                if ($stmt->fetch()){
+                    echo "<script>location.href='../newUser.php?erro=2';</script>";
                 }else{
-                    echo "<script>location.href='../newUser.php?erro=1';</script>";
+                    $userName = $_POST['userName'];
+                    $userEmail = $_POST['userEmail'];
+                    $password = $_POST['userPassword'];
+                    $passwordConfirm = $_POST['userPasswordConfirm'];
+
+                    if ($password==$passwordConfirm){
+                        $userPassword = crypt($password);
+
+                        $query = "INSERT INTO `nc_users`(`user_email`, `user_name`, `user_password`) VALUES (?,?,?)";
+
+                        $stmt = $mysqli->prepare($query);
+                        $stmt->bind_param('sss',$userEmail, $userName, $userPassword);
+                        $stmt->execute();
+
+                        if ($stmt->affected_rows==1){
+                            echo "<script> location.href='../login.php?success=1';</script>";
+                        }else{
+                            echo "<script> location.href='../newUser.php?success=0';</script>";
+                        }
+
+                        $stmt->close();
+
+                        exit;
+                    }else{
+                        echo "<script>location.href='../newUser.php?erro=1';</script>";
+                    }
                 }
+               
             }
         }
     }

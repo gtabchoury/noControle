@@ -55,29 +55,56 @@ if (isset($_GET['erro'])){
 
                                 ";
                                 $_SESSION['erro']=0;
+                            }else{
+                                if ($erro==2){
+                                    echo "
+                                    <br>
+                                    <div class='alert alert-danger alert-dismissable'>
+                                        E-mail já cadastrado!
+                                    </div>
+
+
+                                    ";
+                                    $_SESSION['erro']=0;
+                                }
                             }
                         }
 
                         
                         ?>
                         <form action="system/sy-newUser.php" method="POST" role="form" id="newUser" enctype="multipart/form-data">
+                            <br>
                             <div class="form-group">
-                                <label>Nome</label>
-                                <input type="text" name="userName" class="form-control" placeholder="Digite seu nome" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <input type="email" name="userEmail" class="form-control" placeholder="Digite seu e-mail" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Senha</label>
-                                <input type="password" name="userPassword" class="form-control" placeholder="Digite sua senha" required>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-font"></i>
+                                    </span>
+                                    <input type="text" name="userName" class="form-control" placeholder="Nome" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label>Confirmar Senha</label>
-                                <input type="password" name="userPasswordConfirm" class="form-control" placeholder="Confirme sua senha" required>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input type="email" name="userEmail" class="form-control" placeholder="E-mail" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-lock"></i>
+                                    </span>
+                                    <input type="password" name="userPassword" class="form-control" placeholder="Senha" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-lock"></i>
+                                    </span>
+                                    <input type="password" name="userPasswordConfirm" class="form-control" placeholder="Confirme sua senha" required>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-block">Cadastrar</button>

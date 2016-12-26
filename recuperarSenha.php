@@ -36,7 +36,6 @@ if (!isset($_SESSION)){
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-body">
-                    <br>
                     <div align="center">
                         <h3>Recupere sua senha</h3>
                     </div>
@@ -53,7 +52,6 @@ if (!isset($_SESSION)){
                                 <div class='alert alert-success alert-dismissable'>
                                     Um e-mail para redefinir sua senha foi enviado!
                                 </div>
-
                                 ";
                                 $apaga=1;
                             }else{
@@ -63,7 +61,6 @@ if (!isset($_SESSION)){
                                     <div class='alert alert-danger alert-dismissable'>
                                         Erro ao enviar e-mail para redefinir a senha.
                                     </div>  
-
                                     ";
                                     $apaga=0;
                                 }else{
@@ -72,8 +69,7 @@ if (!isset($_SESSION)){
                                         <br>
                                         <div class='alert alert-danger alert-dismissable'>
                                             E-mail não cadastrado no sistema.
-                                        </div>  
-
+                                        </div>
                                         ";
                                         $apaga=0;
                                     }
@@ -87,8 +83,14 @@ if (!isset($_SESSION)){
                                 <form action='system/sy-recuperarSenha.php' method='POST' role='form'>
                                     <input type='hidden' name='sent' />
                                     <fieldset>
+                                    <br>
                                         <div class='form-group'>
-                                            Email: <input type='email' name='email' class='form-control' placeholder='Digite seu email para recuperação' required/>
+                                            <div class='input-group'>
+                                                <span class='input-group-addon'>
+                                                <i class='glyphicon glyphicon-user'></i>
+                                                </span>
+                                                <input type='email' name='email' class='form-control' placeholder='Email' required/>
+                                            </div>
                                         </div>
                                         <div class='form-group'>
                                             <button type='submit' class='btn btn-success btn-block'>Recuperar senha</button>

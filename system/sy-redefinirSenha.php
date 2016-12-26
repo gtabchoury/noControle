@@ -30,6 +30,7 @@ if (isset($_POST['userPassword'])){
                 $stmt->execute();
 
                 if ($stmt->affected_rows==1){
+                    $_SESSION['emailRec']="";
                     echo "<script> location.href='../senhaAlterada.php';</script>";
                 }else{
                     $_SESSION['erroSenha']=2;

@@ -56,7 +56,6 @@ if (!isset($_SESSION)){
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-body">
-                    <br>
                     <div align="center">
                         <h3>Conecte-se</h3>
                     </div>
@@ -97,11 +96,22 @@ if (!isset($_SESSION)){
                         <form action="system/sy-login.php" method="POST" role="form" id="loginSap">
                             <input type="hidden" name="sent" />
                             <fieldset>
+                                <br>
                                 <div class="form-group">
-                                    Email: <input type="email" value="" name="email" class="form-control" placeholder="Email" required/>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        </span>
+                                        <input type="email" value="" name="email" class="form-control" placeholder="Email" required/>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    Senha:<input type="password" value="" name="senha" class="form-control" placeholder="Senha" required/>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                        </span>
+                                        <input type="password" value="" name="senha" class="form-control" placeholder="Senha" required/>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="row">

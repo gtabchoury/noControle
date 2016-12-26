@@ -25,7 +25,7 @@ if (isset($_GET['id'])){
     }
     
 }else{
-    if (!isset($_SESSION['emailRec'])){
+    if (!isset($_SESSION['emailRec']) || $_SESSION['emailRec']==null){
         header('location:login.php');
     }else{
         $emailConfirm = $_SESSION['emailRec'];
@@ -62,7 +62,6 @@ if (!isset($_SESSION)){
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-body">
-                    <br>
                     <div align="center">
                         <h3>Redefinir senha</h3>
                     </div>
@@ -100,12 +99,20 @@ if (!isset($_SESSION)){
                             <fieldset>
                                 <h5>Olá <b><?php echo "$nameConfirm";?></b>, vamos redefinir sua senha!</h5>
                                 <div class="form-group">
-                                    <label>Nova Senha</label>
-                                    <input type="password" name="userPassword" class="form-control" placeholder="Digite uma nova senha" required>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                        </span>
+                                        <input type="password" name="userPassword" class="form-control" placeholder="Nova senha" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Confirmar Senha</label>
-                                    <input type="password" name="userPasswordConfirm" class="form-control" placeholder="Confirme sua nova senha" required>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                        </span>
+                                        <input type="password" name="userPasswordConfirm" class="form-control" placeholder="Confirme sua nova senha" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-success btn-block">Redefinir Senha</button>
