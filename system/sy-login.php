@@ -28,8 +28,8 @@
             if ($crypt_senha==$hash){
                 $_SESSION['usuario_id'] = $user_id;
                 $_SESSION['usuario_nome'] = $user_name;
-                //echo "<script>location.href='../inicio.php';</script>";
-                echo "login efetuado";
+                $_SESSION['usuario_email'] = $email;
+                echo "<script>location.href='../painel/inicio.php';</script>";
             }else{
                 echo "<script>location.href='../login.php?erro=1';</script>";
             }
