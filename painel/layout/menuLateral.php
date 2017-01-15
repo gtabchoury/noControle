@@ -6,7 +6,7 @@
                 <a href="inicio.php"><i class="fa fa-home fa-fw"></i> Home</a>
             </li>
             <li>
-                <a href="inicio.php"><i class="glyphicon glyphicon-plus-sign fa-fw"></i> Contas a receber</a>
+                <a href="contasReceber.php"><i class="glyphicon glyphicon-plus-sign fa-fw"></i> Contas a receber</a>
             </li>
             <li>
                 <a href="inicio.php"><i class="glyphicon glyphicon-minus-sign fa-fw"></i> Contas a pagar</a>

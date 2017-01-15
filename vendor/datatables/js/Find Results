@@ -1,0 +1,221 @@
+Searching 231 files for "showing"
+
+C:\xampp\htdocs\noControle\vendor\datatables\js\jquery.dataTables.js:
+ 10645  		/**
+ 10646  		 * When rendering large numbers in the information element for the table
+ 10647: 		 * (i.e. "Showing 1 to 10 of 57 entries") DataTables will render large numbers
+ 10648  		 * to have a comma separator for the 'thousands' units (e.g. 1 million is
+ 10649  		 * rendered as "1,000,000") to help readability for the end user. This
+ .....
+ 11383  			 *
+ 11384  			 *  @type string
+ 11385: 			 *  @default Showing _START_ to _END_ of _TOTAL_ entries
+ 11386  			 *
+ 11387  			 *  @dtopt Language
+ .....
+ 11392  			 *      $('#example').dataTable( {
+ 11393  			 *        "language": {
+ 11394: 			 *          "info": "Showing page _PAGE_ of _PAGES_"
+ 11395  			 *        }
+ 11396  			 *      } );
+ 11397  			 *    } );
+ 11398  			 */
+ 11399: 			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+ 11400  	
+ 11401  	
+ .....
+ 11404  			 * format of this string should match `info`.
+ 11405  			 *  @type string
+ 11406: 			 *  @default Showing 0 to 0 of 0 entries
+ 11407  			 *
+ 11408  			 *  @dtopt Language
+ .....
+ 11418  			 *    } );
+ 11419  			 */
+ 11420: 			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+ 11421  	
+ 11422  	
+ .....
+ 12914  	
+ 12915  			/**
+ 12916: 			 * Table information element (the 'Showing x of y records' div) enable
+ 12917  			 * flag.
+ 12918  			 * Note that this parameter will be set by the initialisation routine. To
+
+C:\xampp\htdocs\noControle\vendor\datatables\js\jquery.dataTables.min.js:
+  141  sTitle:null,sType:null,sWidth:null,sWidthOrig:null};m.defaults={aaData:null,aaSorting:[[0,"asc"]],aaSortingFixed:[],ajax:null,aLengthMenu:[10,25,50,100],aoColumns:null,aoColumnDefs:null,aoSearchCols:[],asStripeClasses:null,bAutoWidth:!0,bDeferRender:!1,bDestroy:!1,bFilter:!0,bInfo:!0,bJQueryUI:!1,bLengthChange:!0,bPaginate:!0,bProcessing:!1,bRetrieve:!1,bScrollCollapse:!1,bServerSide:!1,bSort:!0,bSortMulti:!0,bSortCellsTop:!1,bSortClasses:!0,bStateSave:!1,fnCreatedRow:null,fnDrawCallback:null,fnFooterCallback:null,
+  142  fnFormatNumber:function(a){return a.toString().replace(/\B(?=(\d{3})+(?!\d))/g,this.oLanguage.sThousands)},fnHeaderCallback:null,fnInfoCallback:null,fnInitComplete:null,fnPreDrawCallback:null,fnRowCallback:null,fnServerData:null,fnServerParams:null,fnStateLoadCallback:function(a){try{return JSON.parse((-1===a.iStateDuration?sessionStorage:localStorage).getItem("DataTables_"+a.sInstance+"_"+location.pathname))}catch(b){}},fnStateLoadParams:null,fnStateLoaded:null,fnStateSaveCallback:function(a,b){try{(-1===
+  143: a.iStateDuration?sessionStorage:localStorage).setItem("DataTables_"+a.sInstance+"_"+location.pathname,JSON.stringify(b))}catch(c){}},fnStateSaveParams:null,iStateDuration:7200,iDeferLoading:null,iDisplayLength:10,iDisplayStart:0,iTabIndex:0,oClasses:{},oLanguage:{oAria:{sSortAscending:": activate to sort column ascending",sSortDescending:": activate to sort column descending"},oPaginate:{sFirst:"First",sLast:"Last",sNext:"Next",sPrevious:"Previous"},sEmptyTable:"No data available in table",sInfo:"Showing _START_ to _END_ of _TOTAL_ entries",
+  144: sInfoEmpty:"Showing 0 to 0 of 0 entries",sInfoFiltered:"(filtered from _MAX_ total entries)",sInfoPostFix:"",sDecimal:"",sThousands:",",sLengthMenu:"Show _MENU_ entries",sLoadingRecords:"Loading...",sProcessing:"Processing...",sSearch:"Search:",sSearchPlaceholder:"",sUrl:"",sZeroRecords:"No matching records found"},oSearch:h.extend({},m.models.oSearch),sAjaxDataProp:"data",sAjaxSource:null,sDom:"lfrtip",searchDelay:null,sPaginationType:"simple_numbers",sScrollX:"",sScrollXInner:"",sScrollY:"",sServerMethod:"GET",
+  145  renderer:null,rowId:"DT_RowId"};X(m.defaults);m.defaults.column={aDataSort:null,iDataSort:-1,asSorting:["asc","desc"],bSearchable:!0,bSortable:!0,bVisible:!0,fnCreatedCell:null,mData:null,mRender:null,sCellType:"td",sClass:"",sContentPadding:"",sDefaultContent:null,sName:"",sSortDataType:"std",sTitle:null,sType:null,sWidth:null};X(m.defaults.column);m.models.oSettings={oFeatures:{bAutoWidth:null,bDeferRender:null,bFilter:null,bInfo:null,bLengthChange:null,bPaginate:null,bProcessing:null,bServerSide:null,
+  146  bSort:null,bSortMulti:null,bSortClasses:null,bStateSave:null},oScroll:{bCollapse:null,iBarWidth:0,sX:null,sXInner:null,sY:null},oLanguage:{fnInfoCallback:null},oBrowser:{bScrollOversize:!1,bScrollbarLeft:!1,bBounding:!1,barWidth:0},ajax:null,aanFeatures:[],aoData:[],aiDisplay:[],aiDisplayMaster:[],aIds:{},aoColumns:[],aoHeader:[],aoFooter:[],oPreviousSearch:{},aoPreSearchCols:[],aaSorting:null,aaSortingFixed:[],asStripeClasses:null,asDestroyStripes:[],sDestroyWidth:0,aoRowCallback:[],aoHeaderCallback:[],
+
+C:\xampp\htdocs\noControle\vendor\flot\jquery.flot.crosshair.js:
+    1: /* Flot plugin for showing crosshairs when the mouse hovers over the plot.
+    2  
+    3  Copyright (c) 2007-2014 IOLA and Ole Laursen.
+
+C:\xampp\htdocs\noControle\vendor\flot\jquery.flot.errorbars.js:
+   57  Color and radius both default to the same ones of the points series if not
+   58  set. The independent radius parameter on xerr/yerr is useful for the case when
+   59: we may want to add error-bars to a line, without showing the interconnecting
+   60: points (with radius: 0), and still showing end caps on the error-bars.
+   61  shadowSize and lineWidth are derived as well from the points series.
+   62  
+   ..
+  148  
+  149          var errRanges = [exl, exu, eyl, eyu];
+  150:         // nullify if not showing
+  151          if (!xerr.show){
+  152              errRanges[0] = null;
+
+C:\xampp\htdocs\noControle\vendor\flot-tooltip\jquery.flot.tooltip.js:
+  290          };
+  291  
+  292:         // Quick little function for showing the tooltip.
+  293          plot.showTooltip = function (target, position, targetPosition) {
+  294              var $tip = that.getDomElement();
+
+C:\xampp\htdocs\noControle\vendor\flot-tooltip\jquery.flot.tooltip.source.js:
+  279          };
+  280  
+  281:         // Quick little function for showing the tooltip.
+  282          plot.showTooltip = function (target, position, targetPosition) {
+  283              var $tip = that.getDomElement();
+
+C:\xampp\htdocs\noControle\vendor\magnific-popup\jquery.magnific-popup.js:
+ 1550  	_emptyPage = '//about:blank',
+ 1551  
+ 1552: 	_fixIframeBugs = function(isShowing) {
+ 1553  		if(mfp.currTemplate[IFRAME_NS]) {
+ 1554  			var el = mfp.currTemplate[IFRAME_NS].find('iframe');
+ 1555  			if(el.length) {
+ 1556  				// reset src after the popup is closed to avoid "video keeps playing after popup is closed" bug
+ 1557: 				if(!isShowing) {
+ 1558  					el[0].src = _emptyPage;
+ 1559  				}
+ ....
+ 1561  				// IE8 black screen bug fix
+ 1562  				if(mfp.isIE8) {
+ 1563: 					el.css('display', isShowing ? 'block' : 'none');
+ 1564  				}
+ 1565  			}
+ ....
+ 1605  						_fixIframeBugs(); // iframe if removed
+ 1606  					} else if(newType === IFRAME_NS) {
+ 1607: 						_fixIframeBugs(true); // iframe is showing
+ 1608  					}
+ 1609  				}// else {
+
+19 matches across 7 files
+
+Searching 231 files for "showing"
+
+C:\xampp\htdocs\noControle\vendor\datatables\js\jquery.dataTables.js:
+ 10645  		/**
+ 10646  		 * When rendering large numbers in the information element for the table
+ 10647: 		 * (i.e. "Showing 1 to 10 of 57 entries") DataTables will render large numbers
+ 10648  		 * to have a comma separator for the 'thousands' units (e.g. 1 million is
+ 10649  		 * rendered as "1,000,000") to help readability for the end user. This
+ .....
+ 11383  			 *
+ 11384  			 *  @type string
+ 11385: 			 *  @default Mostrando _START_ to _END_ de _TOTAL_ dados
+ 11386  			 *
+ 11387  			 *  @dtopt Language
+ .....
+ 11392  			 *      $('#example').dataTable( {
+ 11393  			 *        "language": {
+ 11394: 			 *          "info": "Mostrando página _PAGE_ de _PAGES_"
+ 11395  			 *        }
+ 11396  			 *      } );
+ 11397  			 *    } );
+ 11398  			 */
+ 11399: 			"sInfo": "Mostrando _START_ à _END_ de _TOTAL_ dados",
+ 11400  	
+ 11401  	
+ .....
+ 11404  			 * format of this string should match `info`.
+ 11405  			 *  @type string
+ 11406: 			 *  @default Mostrando 0 à 0 de 0 dados
+ 11407  			 *
+ 11408  			 *  @dtopt Language
+ .....
+ 11418  			 *    } );
+ 11419  			 */
+ 11420: 			"sInfoEmpty": "Mostrando 0 à 0 de 0 dados",
+ 11421  	
+ 11422  	
+ .....
+ 12914  	
+ 12915  			/**
+ 12916: 			 * Table information element (the 'Showing x of y records' div) enable
+ 12917  			 * flag.
+ 12918  			 * Note that this parameter will be set by the initialisation routine. To
+
+C:\xampp\htdocs\noControle\vendor\datatables\js\jquery.dataTables.min.js:
+  141  sTitle:null,sType:null,sWidth:null,sWidthOrig:null};m.defaults={aaData:null,aaSorting:[[0,"asc"]],aaSortingFixed:[],ajax:null,aLengthMenu:[10,25,50,100],aoColumns:null,aoColumnDefs:null,aoSearchCols:[],asStripeClasses:null,bAutoWidth:!0,bDeferRender:!1,bDestroy:!1,bFilter:!0,bInfo:!0,bJQueryUI:!1,bLengthChange:!0,bPaginate:!0,bProcessing:!1,bRetrieve:!1,bScrollCollapse:!1,bServerSide:!1,bSort:!0,bSortMulti:!0,bSortCellsTop:!1,bSortClasses:!0,bStateSave:!1,fnCreatedRow:null,fnDrawCallback:null,fnFooterCallback:null,
+  142  fnFormatNumber:function(a){return a.toString().replace(/\B(?=(\d{3})+(?!\d))/g,this.oLanguage.sThousands)},fnHeaderCallback:null,fnInfoCallback:null,fnInitComplete:null,fnPreDrawCallback:null,fnRowCallback:null,fnServerData:null,fnServerParams:null,fnStateLoadCallback:function(a){try{return JSON.parse((-1===a.iStateDuration?sessionStorage:localStorage).getItem("DataTables_"+a.sInstance+"_"+location.pathname))}catch(b){}},fnStateLoadParams:null,fnStateLoaded:null,fnStateSaveCallback:function(a,b){try{(-1===
+  143: a.iStateDuration?sessionStorage:localStorage).setItem("DataTables_"+a.sInstance+"_"+location.pathname,JSON.stringify(b))}catch(c){}},fnStateSaveParams:null,iStateDuration:7200,iDeferLoading:null,iDisplayLength:10,iDisplayStart:0,iTabIndex:0,oClasses:{},oLanguage:{oAria:{sSortAscending:": activate to sort column ascending",sSortDescending:": activate to sort column descending"},oPaginate:{sFirst:"First",sLast:"Last",sNext:"Next",sPrevious:"Previous"},sEmptyTable:"No data available in table",sInfo:"Showing _START_ to _END_ of _TOTAL_ entries",
+  144: sInfoEmpty:"Showing 0 to 0 of 0 entries",sInfoFiltered:"(filtered from _MAX_ total entries)",sInfoPostFix:"",sDecimal:"",sThousands:",",sLengthMenu:"Show _MENU_ entries",sLoadingRecords:"Loading...",sProcessing:"Processing...",sSearch:"Search:",sSearchPlaceholder:"",sUrl:"",sZeroRecords:"No matching records found"},oSearch:h.extend({},m.models.oSearch),sAjaxDataProp:"data",sAjaxSource:null,sDom:"lfrtip",searchDelay:null,sPaginationType:"simple_numbers",sScrollX:"",sScrollXInner:"",sScrollY:"",sServerMethod:"GET",
+  145  renderer:null,rowId:"DT_RowId"};X(m.defaults);m.defaults.column={aDataSort:null,iDataSort:-1,asSorting:["asc","desc"],bSearchable:!0,bSortable:!0,bVisible:!0,fnCreatedCell:null,mData:null,mRender:null,sCellType:"td",sClass:"",sContentPadding:"",sDefaultContent:null,sName:"",sSortDataType:"std",sTitle:null,sType:null,sWidth:null};X(m.defaults.column);m.models.oSettings={oFeatures:{bAutoWidth:null,bDeferRender:null,bFilter:null,bInfo:null,bLengthChange:null,bPaginate:null,bProcessing:null,bServerSide:null,
+  146  bSort:null,bSortMulti:null,bSortClasses:null,bStateSave:null},oScroll:{bCollapse:null,iBarWidth:0,sX:null,sXInner:null,sY:null},oLanguage:{fnInfoCallback:null},oBrowser:{bScrollOversize:!1,bScrollbarLeft:!1,bBounding:!1,barWidth:0},ajax:null,aanFeatures:[],aoData:[],aiDisplay:[],aiDisplayMaster:[],aIds:{},aoColumns:[],aoHeader:[],aoFooter:[],oPreviousSearch:{},aoPreSearchCols:[],aaSorting:null,aaSortingFixed:[],asStripeClasses:null,asDestroyStripes:[],sDestroyWidth:0,aoRowCallback:[],aoHeaderCallback:[],
+
+C:\xampp\htdocs\noControle\vendor\flot\jquery.flot.crosshair.js:
+    1: /* Flot plugin for showing crosshairs when the mouse hovers over the plot.
+    2  
+    3  Copyright (c) 2007-2014 IOLA and Ole Laursen.
+
+C:\xampp\htdocs\noControle\vendor\flot\jquery.flot.errorbars.js:
+   57  Color and radius both default to the same ones of the points series if not
+   58  set. The independent radius parameter on xerr/yerr is useful for the case when
+   59: we may want to add error-bars to a line, without showing the interconnecting
+   60: points (with radius: 0), and still showing end caps on the error-bars.
+   61  shadowSize and lineWidth are derived as well from the points series.
+   62  
+   ..
+  148  
+  149          var errRanges = [exl, exu, eyl, eyu];
+  150:         // nullify if not showing
+  151          if (!xerr.show){
+  152              errRanges[0] = null;
+
+C:\xampp\htdocs\noControle\vendor\flot-tooltip\jquery.flot.tooltip.js:
+  290          };
+  291  
+  292:         // Quick little function for showing the tooltip.
+  293          plot.showTooltip = function (target, position, targetPosition) {
+  294              var $tip = that.getDomElement();
+
+C:\xampp\htdocs\noControle\vendor\flot-tooltip\jquery.flot.tooltip.source.js:
+  279          };
+  280  
+  281:         // Quick little function for showing the tooltip.
+  282          plot.showTooltip = function (target, position, targetPosition) {
+  283              var $tip = that.getDomElement();
+
+C:\xampp\htdocs\noControle\vendor\magnific-popup\jquery.magnific-popup.js:
+ 1550  	_emptyPage = '//about:blank',
+ 1551  
+ 1552: 	_fixIframeBugs = function(isShowing) {
+ 1553  		if(mfp.currTemplate[IFRAME_NS]) {
+ 1554  			var el = mfp.currTemplate[IFRAME_NS].find('iframe');
+ 1555  			if(el.length) {
+ 1556  				// reset src after the popup is closed to avoid "video keeps playing after popup is closed" bug
+ 1557: 				if(!isShowing) {
+ 1558  					el[0].src = _emptyPage;
+ 1559  				}
+ ....
+ 1561  				// IE8 black screen bug fix
+ 1562  				if(mfp.isIE8) {
+ 1563: 					el.css('display', isShowing ? 'block' : 'none');
+ 1564  				}
+ 1565  			}
+ ....
+ 1605  						_fixIframeBugs(); // iframe if removed
+ 1606  					} else if(newType === IFRAME_NS) {
+ 1607: 						_fixIframeBugs(true); // iframe is showing
+ 1608  					}
+ 1609  				}// else {
+
+19 matches across 7 files
