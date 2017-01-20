@@ -1,6 +1,12 @@
 <?php
 
 ini_set('default_charset','UTF-8');
+
+if(!isset($_SESSION['usuario_id'])){
+    header('Location: ../../login.php');
+    exit;
+}
+
 $userID = $_SESSION['usuario_id'];
 $_SESSION['count']=0;
 
@@ -15,10 +21,10 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $_SESSION['user_contatos_ids'][$_SESSION['count']]=$id;
     $_SESSION['count']=$_SESSION['count']+1;
     echo "
-	    <option value='$id'>
-	        $nome
-	    </option>
-	    ";
+    <option value='$id'>
+       $nome
+   </option>
+   ";
 }
 
 ?>

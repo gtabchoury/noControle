@@ -7,7 +7,7 @@
                 </button>
                 <div>
                     <img src="../img/icone.png" class="navbar-brand">
-                    <a class="navbar-brand" href="index.php">noControle</a>
+                    <a class="navbar-brand" href="inicio.php">noControle</a>
                 </div>
             </div>
             <!-- /.navbar-header -->

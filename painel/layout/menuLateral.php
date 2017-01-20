@@ -9,19 +9,19 @@
                 <a href="contasReceber.php"><i class="glyphicon glyphicon-plus-sign fa-fw"></i> Contas a receber</a>
             </li>
             <li>
-                <a href="inicio.php"><i class="glyphicon glyphicon-minus-sign fa-fw"></i> Contas a pagar</a>
+                <a href="contasPagar.php"><i class="glyphicon glyphicon-minus-sign fa-fw"></i> Contas a pagar</a>
             </li>
             <li>
-                <a href="inicio.php"><i class="glyphicon glyphicon-stats fa-fw"></i> Fluxo de caixa</a>
+                <a href="caixa.php"><i class="glyphicon glyphicon-stats fa-fw"></i> Caixa</a>
             </li>
             <li>
-                <a href="inicio.php"><i class="fa fa-users fa-fw"></i> Contatos</a>
+                <a href="contatos.php"><i class="fa fa-users fa-fw"></i> Contatos</a>
             </li>
             <li>
-                <a href="inicio.php"><i class="fa fa-credit-card fa-fw"></i> Cartão Ponto</a>
+                <a href="cartaoPonto.php"><i class="fa fa-credit-card fa-fw"></i> Cartão Ponto</a>
             </li>
             <li>
-                <a href="inicio.php"><i class="fa fa-signal fa-fw"></i> Caixa</a>
+                <a href="fluxoCaixa.php"><i class="fa fa-signal fa-fw"></i>Fluxo de Caixa</a>
             </li>
         </ul>
     </div>

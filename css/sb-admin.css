@@ -28,7 +28,7 @@ body {
 }
 
 .huge {
-    font-size: 50px;
+    font-size: 30px;
     line-height: normal;
 }
 
@@ -169,7 +169,7 @@ ul.alert-dropdown {
 /* Custom Colored Panels */
 
 .huge {
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .panel-green {

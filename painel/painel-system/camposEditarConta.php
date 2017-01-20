@@ -15,23 +15,23 @@
             <select class="form-control chosen" name="fonteConta">             
                 <option>Selecione o Contato</option>
                 <?php
-                    for ($i=0;$i<$_SESSION['count'];$i++){
-                        $nomeCont = $_SESSION['user_contatos'][$i];
-                        $idCont = $_SESSION['user_contatos_ids'][$i];
-                        if ($fonteID==$idCont){
-                            echo "
-                                <option value='$idCont' selected>
-                                    $nomeCont
-                                </option>
-                                ";
-                        }else{
-                            echo "
-                                <option value='$idCont'>
-                                    $nomeCont
-                                </option>
-                                ";
-                        }
+                for ($i=0;$i<$_SESSION['count'];$i++){
+                    $nomeCont = $_SESSION['user_contatos'][$i];
+                    $idCont = $_SESSION['user_contatos_ids'][$i];
+                    if ($fonteID==$idCont){
+                        echo "
+                        <option value='$idCont' selected>
+                            $nomeCont
+                        </option>
+                        ";
+                    }else{
+                        echo "
+                        <option value='$idCont'>
+                            $nomeCont
+                        </option>
+                        ";
                     }
+                }
                 ?>
             </select>
         </div>
@@ -65,13 +65,13 @@
         <div class="input-group">
             <div class="checkbox">
                 <label>
-                <?php
-                if ($status==1){
-                    echo"<input name='statusConta' type='checkbox' checked>Recebido";
-                }else{
-                    echo"<input name='statusConta' type='checkbox'>Recebido";
-                }
-                ?>
+                    <?php
+                    if ($status==1){
+                        echo"<input name='statusConta' type='checkbox' checked>Recebido";
+                    }else{
+                        echo"<input name='statusConta' type='checkbox'>Recebido";
+                    }
+                    ?>
                 </label>
                 <label>
                     <input name="nofique" type="checkbox" value="">Notifique-me
