@@ -9,6 +9,10 @@ $userID = $_SESSION['usuario_id'];
 $totalR = 0;
 $totalP = 0;
 
+$_SESSION['totalB'] = number_format(0,2,',','');
+$_SESSION['totalR'] = number_format(0,2,',','');
+$_SESSION['totalP'] = number_format(0,2,',','');
+
 date_default_timezone_set('America/Sao_Paulo');
 $mesAtual = date('m');
 
