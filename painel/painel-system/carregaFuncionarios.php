@@ -8,19 +8,20 @@ if(!isset($_SESSION['usuario_id'])){
 $userID = $_SESSION['usuario_id'];
 
 
-$query = "SELECT * FROM nc_contatos WHERE contato_userID=$userID  ORDER BY contato_nome;";
+$query = "SELECT * FROM nc_funcionarios WHERE func_userID=$userID  ORDER BY func_nome;";
 $result = mysqli_query($mysqli, $query);
 $rowcount=mysqli_num_rows($result);
 
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
-  $id = $row['contato_id'];
-  $nome = $row['contato_nome'];
-  $email = $row['contato_email'];
-  $telefone = $row['contato_telefone'];
-  $endereco = $row['contato_endereco'];
+  $id = $row['func_id'];
+  $nome = $row['func_nome'];
+  $salario = $row['func_salario'];
+  $salario =number_format($salario,2,',','');
+  $telefone = $row['func_telefone'];
+  $endereco = $row['func_endereco'];
   $endereco2 = $endereco;
-  $cpf = $row['contato_cpf'];
+  $cpf = $row['func_cpf'];
 
   if ($endereco==""){
     $endereco = "$nome não possui um endereço cadastrado!";
@@ -29,7 +30,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
   echo "
   <tr>
     <td style='vertical-align: middle;'><font size='3px'>$nome</font></td>
-    <td style='vertical-align: middle;'><font size='3px'>$email</font></td>
+    <td style='vertical-align: middle;'><font size='3px'>R$$salario</font></td>
     <td style='vertical-align: middle;'><font size='3px'>$telefone</font></td>
     <td style='vertical-align: middle;'><font size='3px'>$cpf</font></td>
     <td style='vertical-align: middle;' align='center'>
@@ -51,13 +52,13 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
           <div class='modal-content'>
             <div class='modal-header'>
               <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-              <h4 class='modal-title' id='myModalLabel'>Excluir contato</h4>
+              <h4 class='modal-title' id='myModalLabel'>Excluir funcionário</h4>
             </div>
             <div class='modal-body'>
-              Deseja realmente excluir o contato $nome?
+              Deseja realmente excluir o funcionário $nome?
             </div>
             <div class='modal-footer'>
-            <form action='painel-system/excluirContato.php' method='POST' role='form'>
+            <form action='painel-system/excluirFunc.php' method='POST' role='form'>
                 <input type='hidden' name='id' value='$id'>
                 <button type='button' class='btn btn-default' data-dismiss='modal'>Cancelar</button>
                 <button type='submit' class='btn btn-danger'>Excluir</button>
@@ -72,13 +73,13 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
           <div class='modal-content'>
             <div class='modal-header'>
               <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-              <h4 class='modal-title' id='myModalLabel'>Editar contato</h4>
+              <h4 class='modal-title' id='myModalLabel'>Editar funcionário</h4>
             </div>
-            <form action='painel-system/editarContato.php' method='POST' role='form'>
+            <form action='painel-system/editarFuncionario.php' method='POST' role='form'>
               <input type='hidden' name='id' value='$id'>
               <div class='modal-body'>
                 ";
-                include("camposEditarContatos.php");
+                include("camposEditarFuncionarios.php");
                 echo"
               </div>
               <div class='modal-footer'>
@@ -111,5 +112,5 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 echo "  </tbody>
 </table>";
 
-echo "<div class='col-lg-12' align='center'><a href='painel-system/lista_contatos.php' class='btn btn-primary' target='_blank'>Gerar Arquivo PDF</a><br></div><br><br>";
+echo "<div class='col-lg-12' align='center'><a href='painel-system/lista_funcionario.php' class='btn btn-primary' target='_blank'>Gerar Arquivo PDF</a><br></div><br><br>";
 ?>

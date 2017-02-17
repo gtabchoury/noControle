@@ -12,7 +12,7 @@ $total = 0;
 date_default_timezone_set('America/Sao_Paulo');
 $mesAtual = date('m');
 
-$query = "SELECT * FROM nc_contas WHERE conta_userID=$userID AND conta_tipo='P' ORDER BY conta_nome;";
+$query = "SELECT * FROM nc_contas WHERE conta_userID=$userID AND conta_tipo='P' ORDER BY conta_data;";
 $result = mysqli_query($mysqli, $query);
 $rowcount=mysqli_num_rows($result);
 
@@ -73,7 +73,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                   <h4 class='modal-title' id='myModalLabel'>Excluir conta</h4>
                 </div>
                 <div class='modal-body'>
-                  Deseja realmente excluir a conta?
+                  Deseja realmente excluir a conta $nome?
                 </div>
                 <div class='modal-footer'>
                   <form action='painel-system/excluirConta.php?tipo=P' method='POST' role='form'>
@@ -195,14 +195,14 @@ echo "<br>
     </div>
     <div class='panel panel-default col-lg-4'>
       <div class='panel-body'>
-        <h3><b>Total</b></h3>
-        <h4><p>R$$total</p><h4>
-        </div>
+        <h3><b>Não Pago</b></h3>
+          <h4><p>R$$totalP</p><h4>
+          </div>
       </div>
       <div class='panel panel-default col-lg-4'>
         <div class='panel-body'>
-          <h3><b>Não Pago</b></h3>
-          <h4><p>R$$totalP</p><h4>
+          <h3><b>Total</b></h3>
+          <h4><p>R$$total</p><h4>
           </div>
         </div>
       </div><br><br><br><br><br>

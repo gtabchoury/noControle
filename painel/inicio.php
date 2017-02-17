@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo"R$$totalR";?></div>
-                                    <div>Contas a Receber</div>
+                                    <div>Recebimentos</div>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo"R$$totalP";?></div>
-                                    <div>Contas a Pagar</div>
+                                    <div>Pagamentos</div>
                                 </div>
                             </div>
                         </div>

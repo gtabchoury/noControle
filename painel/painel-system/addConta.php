@@ -25,6 +25,7 @@ if ($tipoConta=="P"){
 }
 
 $nomeConta = $_POST['nomeConta'];
+$docConta = $_POST['docConta'];
 $fonteConta = $_POST['fonteConta'];
 $valorConta = $_POST['valorConta'];
 $valorConta = str_replace(",",".", $valorConta);
@@ -56,9 +57,9 @@ if ($tipoConta=="R" || $tipoConta=="P"){
     if ($userConta!=null && $tipoConta!=null && $nomeConta!=null && $valorConta!=null &&$dataConta!=null){
 
         for ($i=0;$i<$mesesConta;$i++){
-            $query = "INSERT INTO `nc_contas`(`conta_userID`, `conta_nome`, `conta_fonteID`,`conta_valor`, `conta_data`,`conta_tipo`, `conta_status`) VALUES (?,?,?,?,?,?,?)";  
+            $query = "INSERT INTO `nc_contas`(`conta_userID`, `conta_nome`, `conta_fonteID`,`conta_valor`, `conta_data`,`conta_tipo`, `conta_status`, `conta_documento`) VALUES (?,?,?,?,?,?,?,?)";  
             $stmt = $mysqli->prepare($query);
-            $stmt->bind_param('issssss',$userConta, $nomeConta, $fonteConta, $valorConta, $dataConta, $tipoConta, $statusConta);
+            $stmt->bind_param('isssssss',$userConta, $nomeConta, $fonteConta, $valorConta, $dataConta, $tipoConta, $statusConta, $docConta);
             $stmt->execute();
 
             if ($stmt->affected_rows!=1){

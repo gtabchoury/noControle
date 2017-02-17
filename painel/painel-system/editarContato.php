@@ -19,6 +19,7 @@ $nomeContato = $_POST['nomeContato'];
 $emailContato = $_POST['emailContato'];
 $telContato = $_POST['telContato'];
 $cpfContato = $_POST['cpfContato'];
+$endContato = $_POST['endContato'];
 
 if (isset($_POST['id']))
     $idContato = $_POST['id'];
@@ -26,9 +27,9 @@ else
     echo "<script> location.href='../contatos.php';</script>";
 
 
-$query = "UPDATE `nc_contatos` SET `contato_nome`=?,`contato_email`=?,`contato_telefone`=?,`contato_cpf`=? WHERE contato_id=?;";  
+$query = "UPDATE `nc_contatos` SET `contato_nome`=?,`contato_email`=?,`contato_telefone`=?,`contato_cpf`=?,`contato_endereco`=? WHERE contato_id=?;";  
 $stmt = $mysqli->prepare($query);
-$stmt->bind_param('ssssi',$nomeContato, $emailContato, $telContato, $cpfContato, $idContato);
+$stmt->bind_param('sssssi',$nomeContato, $emailContato, $telContato, $cpfContato, $endContato,$idContato);
 $stmt->execute();
 
 if ($stmt->affected_rows==1){

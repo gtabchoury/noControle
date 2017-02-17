@@ -54,7 +54,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Contatos</h1>
+                    <h1 class="page-header">Funcionários</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -64,23 +64,23 @@
                     <div class="panel panel-default">
 
                         <div class="panel-heading">
-                            Lista de Contatos
+                            Lista de Funcionários
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <table width="100%" class="table table-striped table-bordered table-hover " id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th width="23%">Nome</th>
-                                        <th width="23%">E-mail</th>
-                                        <th width="17%">Telefone</th>
-                                        <th width="17%">CPF</th>
+                                        <th width="27%">Nome</th>
+                                        <th width="17%">Salário</th>
+                                        <th width="18%">Telefone</th>
+                                        <th width="18%">CPF</th>
                                         <th width="8%">End.</th>
                                         <th width="12%">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php include("painel-system/carregaContatos.php");?>
+                                <?php include("painel-system/carregaFuncionarios.php");?>
                                 <br>
                                 <br>  
                                 <div class="col-lg-10">                
@@ -91,7 +91,7 @@
                                             if ($ok==1){
                                                 echo "<div class='row'>
                                                         <div class='alert alert-success'>
-                                                            <b>Contato adicionado com sucesso! </b>
+                                                            <b>Funcionário adicionado com sucesso! </b>
                                                             <i class='glyphicon glyphicon-success'></i>
                                                         </div>
                                                     </div> ";
@@ -99,7 +99,7 @@
                                             if ($ok==0){
                                                 echo "<div class='row'>
                                                         <div class='alert alert-danger'>
-                                                            <b>Erro ao adicionar contato! </b>
+                                                            <b>Erro ao adicionar funcionário! </b>
                                                             <i class='glyphicon glyphicon-remove'></i>
                                                         </div>
                                                     </div> ";
@@ -107,13 +107,13 @@
                                         }
 
                                     ?>
-                                    <div class="panel panel-default" id="addContato">
+                                    <div class="panel panel-default" id="addFuncionario">
                                         <div class="panel-heading">
-                                            Adicionar contato
+                                            Adicionar Funcionário
                                         </div>
 
                                         <div class="panel-body">                   
-                                            <form action="painel-system/addContato.php" method="POST" role="form">
+                                            <form action="painel-system/addFuncionario.php" method="POST" role="form">
                                                 <div class="row">
                                                     <div class="form-group col-lg-5">
                                                         <label class="control-label">Nome</label>
@@ -121,17 +121,17 @@
                                                             <span class="input-group-addon">
                                                                 <i class="fa fa-font"></i>
                                                             </span>
-                                                            <input type="text" name="nomeContato" class="form-control" placeholder="Nome"
+                                                            <input type="text" name="nomeFuncionario" class="form-control" placeholder="Nome"
                                                             required/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-lg-5">
-                                                        <label class="control-label">E-mail</label>
+                                                        <label class="control-label">Salário</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
-                                                                @
+                                                                R$
                                                             </span>
-                                                            <input type="text" name="emailContato" class="form-control" placeholder="E-mail"
+                                                            <input type="text" name="salarioFuncionario" class="form-control" placeholder="ex: 2720,75"
                                                             required/>
                                                         </div>
                                                     </div>                                  
@@ -143,7 +143,7 @@
                                                             <span class="input-group-addon">
                                                                 <i class="fa fa-phone"></i>
                                                             </span>
-                                                            <input type="text" name="telContato" id="telefone" class="form-control" placeholder="Telefone" onkeyup="mascara( this, mtel );" maxlength="15"
+                                                            <input type="text" name="telFuncionario" id="telefone" class="form-control" placeholder="Telefone" onkeyup="mascara( this, mtel );" maxlength="15"
                                                             required/>
                                                         </div>
                                                     </div>
@@ -153,7 +153,7 @@
                                                             <span class="input-group-addon">
                                                                 <i class="fa fa-user"></i>
                                                             </span>
-                                                            <input type="text" name="cpfContato" class="form-control" placeholder="CPF" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
+                                                            <input type="text" name="cpfFuncionario" class="form-control" placeholder="CPF" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
                                                             required/>
                                                         </div>
                                                     </div>                              
@@ -165,16 +165,16 @@
                                                             <span class="input-group-addon">
                                                                 <i class="fa fa-home"></i>
                                                             </span>
-                                                            <input type="text" name="endContato" id="endereco" class="form-control" placeholder="Ex: Rua das Palmeiras, 920 - Centro, Campinas - SP" 
+                                                            <input type="text" name="endFuncionario" id="endereco" class="form-control" placeholder="Ex: Rua das Palmeiras, 920 - Centro, Campinas - SP" 
                                                             />
                                                         </div>
                                                     </div>
                                                                              
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="hidden" name="addContato" />
+                                                    <input type="hidden" name="addFuncionario" />
                                                     <div class="pull-left">
-                                                        <button type="submit" class="btn btn-success">Adicionar Contato</button>
+                                                        <button type="submit" class="btn btn-success">Adicionar Funcionário</button>
                                                     </div>
                                                 </div>
                                             </form>

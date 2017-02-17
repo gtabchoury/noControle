@@ -70,7 +70,7 @@ include("../../system/sy-conexao.php");
 
 $codigoHTML="<p align='right'>$date<p/>
 $userNome <br><br>
-Contas a receber de <b>$mAtual de $anoAtual</b><br><br><br>
+Recebimentos de <b>$mAtual de $anoAtual</b><br><br><br>
 <div class='panel-body'>
     <table width='100%'' class='table table-striped table-bordered table-hover ' align='center'>
         <thead>
@@ -85,7 +85,7 @@ Contas a receber de <b>$mAtual de $anoAtual</b><br><br><br>
         <tbody>
            ";
 
-           $query = "SELECT * FROM nc_contas WHERE conta_userID=$userID AND conta_tipo='R' ORDER BY conta_nome;";
+           $query = "SELECT * FROM nc_contas WHERE conta_userID=$userID AND conta_tipo='R' ORDER BY conta_data;";
            $result = mysqli_query($mysqli, $query);
            $rowcount=mysqli_num_rows($result);
 
@@ -154,12 +154,12 @@ Contas a receber de <b>$mAtual de $anoAtual</b><br><br><br>
             <h4><p>R$$totalRecebido</p><h4>
             </td>
             <td align='center'>
-                <h3><b>Total</b></h3>
-                <h4><p>R$$total</p><h4>
+                <h3><b>Não Recebido</b></h3>
+                <h4><p>R$$totalR</p><h4>
                 </td>
                 <td align='center'>
-                    <h3><b>Não Recebido</b></h3>
-                    <h4><p>R$$totalR</p><h4>
+                    <h3><b>Total</b></h3>
+                    <h4><p>R$$total</p><h4>
                     </td>
                 </tr>
             </table><br>";
