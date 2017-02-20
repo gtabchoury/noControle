@@ -114,13 +114,16 @@ if (!isset($_SESSION)){
                                         <input type="password" value="" name="senha" class="form-control" placeholder="Senha" required/>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" align="center">
                                     <div class="row">
-                                        <div class="col-lg-6">
-                                            <a href="newUser.php" class="btn btn-primary btn-block">Cadastre-se</a>
+                                        <div class="col-lg-2">
+                                            
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-8">
                                             <button type="submit" class="btn btn-success btn-block">Entrar</button>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            
                                         </div>
                                     </div>
                                 </div>

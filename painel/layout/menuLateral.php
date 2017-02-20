@@ -18,14 +18,9 @@
                 <a href="contatos.php"><i class="fa fa-users fa-fw"></i> Contatos</a>
             </li>
             <li>
-                <a href="funcionarios.php"><i class="glyphicon glyphicon-user fa-fw"></i> Funcionários</a>
+                <a href="funcionarios.php"><i class="glyphicon glyphicon-user fa-fw"></i> Colaboradores</a>
             </li>
-            <li>
-                <a href="cartaoPonto.php"><i class="fa fa-credit-card fa-fw"></i> Cartão Ponto</a>
-            </li>
-            <li>
-                <a href="fluxoCaixa.php"><i class="fa fa-signal fa-fw"></i>Fluxo de Caixa</a>
-            </li>
+            
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

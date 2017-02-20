@@ -54,7 +54,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Funcionários</h1>
+                    <h1 class="page-header">Colaboradores</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -64,7 +64,7 @@
                     <div class="panel panel-default">
 
                         <div class="panel-heading">
-                            Lista de Funcionários
+                            Lista de Colaboradores
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -109,7 +109,7 @@
                                     ?>
                                     <div class="panel panel-default" id="addFuncionario">
                                         <div class="panel-heading">
-                                            Adicionar Funcionário
+                                            Adicionar Colaborador
                                         </div>
 
                                         <div class="panel-body">                   
@@ -174,7 +174,7 @@
                                                 <div class="form-group">
                                                     <input type="hidden" name="addFuncionario" />
                                                     <div class="pull-left">
-                                                        <button type="submit" class="btn btn-success">Adicionar Funcionário</button>
+                                                        <button type="submit" class="btn btn-success">Adicionar Colaborador</button>
                                                     </div>
                                                 </div>
                                             </form>
