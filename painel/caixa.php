@@ -133,11 +133,11 @@
                                 <thead>
                                     <tr>
                                         <th width="17%">Data</th>
-                                        <th width="35%">Descrição</th>
-                                        <th width="16%">Débito</th>
-                                        <th width="16%">Crédito</th>
-                                        <th width="16%">Saldo</th>
-                                        
+                                        <th width="24%">Descrição</th>
+                                        <th width="20%">Nº do documento</th>
+                                        <th width="13%">Débito</th>
+                                        <th width="13%">Crédito</th>
+                                        <th width="13%">Saldo</th>
                                     </tr>
                                 </thead>
                                 <tbody>

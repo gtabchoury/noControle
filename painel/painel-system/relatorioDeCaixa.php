@@ -93,10 +93,10 @@ $objPHPExcel->setActiveSheetIndex(0)
 // Podemos configurar diferentes larguras paras as colunas como padrão
 $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
 $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(40);
-$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(20);
-$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(20);
-$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(20);
-$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(20);
+$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(25);
+$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
+$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(15);
+$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(15);
 
 // EDITANDO
 

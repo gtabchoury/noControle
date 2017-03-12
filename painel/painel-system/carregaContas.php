@@ -48,10 +48,6 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         $stmt->close();
       }
 
-      if ($doc!=""){
-        $desc= $desc . " - $doc";
-      }
-
       $tipo = $row['conta_tipo'];
 
       if ($tipo=="P"){
@@ -79,7 +75,9 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         echo "
         
         <td style='vertical-align: middle;'><font size='3px'>"; echo date('d/m/Y', strtotime($data)); echo"</font></td>
-        <td style='vertical-align: middle;'><font size='3px'>$desc</font></td>";
+        <td style='vertical-align: middle;'><font size='3px'>$desc</font></td>
+        <td style='vertical-align: middle;'><font size='3px'>$doc</font></td>";
+
         if ($debito==0){
           echo "<td style='vertical-align: middle;'><font size='3px'></font></td>";
         }else{
