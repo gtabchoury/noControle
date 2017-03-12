@@ -9,7 +9,7 @@ if (!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario_id'])){
-    header('Location: ../../login.php');
+    header('Location: ../../login');
     exit;
 }
 
@@ -28,9 +28,9 @@ $stmt->bind_param('isssss',$userConta, $nomeFunc, $salFunc, $telFunc, $cpfFunc, 
 $stmt->execute();
 
 if ($stmt->affected_rows!=1){
-    echo "<script> location.href='../funcionarios.php?success=0#addFuncionario';</script>";
+    echo "<script> location.href='../funcionarios?success=0#addFuncionario';</script>";
 }else{
-    echo "<script> location.href='../funcionarios.php?success=1#addFuncionario';</script>";
+    echo "<script> location.href='../funcionarios?success=1#addFuncionario';</script>";
 }
 
 $stmt->close();

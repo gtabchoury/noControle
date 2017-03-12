@@ -102,7 +102,7 @@ if (!isset($_SESSION)){
                         
                         ?>
                         <div align="center">
-                            <a href="login.php"><button class="btn btn-primary">Voltar para o Login</button></a>
+                            <a href="login"><button class="btn btn-primary">Voltar para o Login</button></a>
                         </div>
                     </div>
                 </div>

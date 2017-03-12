@@ -9,7 +9,7 @@ if (!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario_id'])){
-    header('Location: ../../login.php');
+    header('Location: ../../login');
     exit;
 }
 
@@ -38,9 +38,9 @@ $stmt->bind_param('isssss',$userConta, $nomeContato, $emailContato, $telContato,
 $stmt->execute();
 
 if ($stmt->affected_rows!=1){
-    echo "<script> location.href='../contatos.php?success=0#addContato';</script>";
+    echo "<script> location.href='../contatos?success=0#addContato';</script>";
 }else{
-    echo "<script> location.href='../contatos.php?success=1#addContato';</script>";
+    echo "<script> location.href='../contatos?success=1#addContato';</script>";
 }
 
 $stmt->close();

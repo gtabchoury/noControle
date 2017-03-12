@@ -7,7 +7,7 @@ if (!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario_id'])){
-    header('Location: ../../login.php');
+    header('Location: ../../login');
     exit;
 }
 
@@ -23,16 +23,16 @@ if ($userSenha==$userSenha2){
     $stmt->execute();
 
     if ($stmt->affected_rows==1){
-        echo "<script> location.href='../configuracoes.php?ok=2';</script>";
+        echo "<script> location.href='../configuracoes?ok=2';</script>";
     }else{
         if ($stmt->affected_rows==0){
-            echo "<script> location.href='../configuracoes.php?ok=2';</script>";
+            echo "<script> location.href='../configuracoes?ok=2';</script>";
         }else{ 
-            echo "<script> location.href='../configuracoes.php?ok=3';</script>";
+            echo "<script> location.href='../configuracoes?ok=3';</script>";
         }
     }
 }else{
-    echo "<script> location.href='../configuracoes.php?ok=4';</script>";
+    echo "<script> location.href='../configuracoes?ok=4';</script>";
 }
 
 

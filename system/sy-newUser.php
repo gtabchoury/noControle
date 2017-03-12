@@ -22,7 +22,7 @@ if (isset($_POST['userName'])){
                 $stmt->bind_result($user_name);
 
                 if ($stmt->fetch()){
-                    echo "<script>location.href='../newUser.php?erro=2';</script>";
+                    echo "<script>location.href='../newUser?erro=2';</script>";
                 }else{
                     $userName = $_POST['userName'];
                     $userEmail = $_POST['userEmail'];
@@ -39,16 +39,16 @@ if (isset($_POST['userName'])){
                         $stmt->execute();
 
                         if ($stmt->affected_rows==1){
-                            echo "<script> location.href='../login.php?success=1';</script>";
+                            echo "<script> location.href='../login?success=1';</script>";
                         }else{
-                            echo "<script> location.href='../newUser.php?success=0';</script>";
+                            echo "<script> location.href='../newUser?success=0';</script>";
                         }
 
                         $stmt->close();
 
                         exit;
                     }else{
-                        echo "<script>location.href='../newUser.php?erro=1';</script>";
+                        echo "<script>location.href='../newUser?erro=1';</script>";
                     }
                 }
                

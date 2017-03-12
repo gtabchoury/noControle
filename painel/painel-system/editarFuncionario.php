@@ -9,7 +9,7 @@ if (!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario_id'])){
-    header('Location: ../../login.php');
+    header('Location: ../../login');
     exit;
 }
 
@@ -26,7 +26,7 @@ $endFunc = $_POST['endFuncionario'];
 if (isset($_POST['id']))
     $idFunc = $_POST['id'];
 else
-    echo "<script> location.href='../funcionarios.php';</script>";
+    echo "<script> location.href='../funcionarios';</script>";
 
 
 $query = "UPDATE `nc_funcionarios` SET `func_nome`=?,`func_salario`=?,`func_telefone`=?,`func_cpf`=?,`func_endereco`=? WHERE func_id=?;";  
@@ -35,9 +35,9 @@ $stmt->bind_param('sssssi',$nomeFunc, $salFunc, $telFunc, $cpfFunc, $endFunc,$id
 $stmt->execute();
 
 if ($stmt->affected_rows==1){
-    echo "<script> location.href='../funcionarios.php';</script>";
+    echo "<script> location.href='../funcionarios';</script>";
 }else{
-    echo "<script> location.href='../funcionarios.php';</script>";
+    echo "<script> location.href='../funcionarios';</script>";
 }
 
 $stmt->close();

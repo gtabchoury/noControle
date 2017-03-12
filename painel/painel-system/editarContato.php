@@ -9,7 +9,7 @@ if (!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario_id'])){
-    header('Location: ../../login.php');
+    header('Location: ../../login');
     exit;
 }
 
@@ -25,7 +25,7 @@ $endContato = $_POST['endContato'];
 if (isset($_POST['id']))
     $idContato = $_POST['id'];
 else
-    echo "<script> location.href='../contatos.php';</script>";
+    echo "<script> location.href='../contatos';</script>";
 
 
 $query = "UPDATE `nc_contatos` SET `contato_nome`=?,`contato_email`=?,`contato_telefone`=?,`contato_doc`=?,`contato_endereco`=? WHERE contato_id=?;";  
@@ -34,9 +34,9 @@ $stmt->bind_param('sssssi',$nomeContato, $emailContato, $telContato, $docContato
 $stmt->execute();
 
 if ($stmt->affected_rows==1){
-    echo "<script> location.href='../contatos.php';</script>";
+    echo "<script> location.href='../contatos';</script>";
 }else{
-    echo "<script> location.href='../contatos.php';</script>";
+    echo "<script> location.href='../contatos';</script>";
 }
 
 $stmt->close();

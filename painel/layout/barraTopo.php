@@ -7,7 +7,7 @@
                 </button>
                 <div>
                     <img src="../img/icone.png" class="navbar-brand">
-                    <a class="navbar-brand" href="inicio.php">noControle</a>
+                    <a class="navbar-brand" href="inicio">noControle</a>
                 </div>
             </div>
             <!-- /.navbar-header -->
@@ -21,10 +21,10 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a>
                         </li>
-                        <li><a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i> Configurações</a>
+                        <li><a href="configuracoes"><i class="fa fa-gear fa-fw"></i> Configurações</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="./painel-system/logout.php"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                        <li><a href="./painel-system/logout"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

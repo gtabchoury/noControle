@@ -29,22 +29,22 @@
                 $_SESSION['usuario_id'] = $user_id;
                 $_SESSION['usuario_nome'] = $user_name;
                 $_SESSION['usuario_email'] = $email;
-                echo "<script>location.href='../painel/inicio.php';</script>";
+                echo "<script>location.href='../painel/inicio';</script>";
             }else{
-                echo "<script>location.href='../login.php?erro=1';</script>";
+                echo "<script>location.href='../login?erro=1';</script>";
             }
         }else{
-            echo "<script>location.href='../login.php?erro=1';</script>";
+            echo "<script>location.href='../login?erro=1';</script>";
         }
 
         $stmt->close();
     
     }else{
-        echo "<script>location.href='../login.php?erro=1';</script>";
+        echo "<script>location.href='../login?erro=1';</script>";
     }
     
  }else{
-     echo "<script>location.href='../login.php?erro=1';</script>";
+     echo "<script>location.href='../login?erro=1';</script>";
  }
 
 ?>

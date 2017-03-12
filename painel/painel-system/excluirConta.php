@@ -7,7 +7,7 @@ if (!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario_id'])){
-    header('Location: ../../login.php');
+    header('Location: ../../login');
     exit;
 }
 
@@ -18,17 +18,17 @@ if (isset($_GET['tipo'])){
 }
 
 if ($tipoConta=="R"){
-    $arquivo="contasReceber.php";
+    $arquivo="contasReceber";
 }
 
 if ($tipoConta=="P"){
-    $arquivo="contasPagar.php";
+    $arquivo="contasPagar";
 }
 
 if (isset($_POST['id']))
     $contaID = $_POST['id'];
 else
-    header('Location: ../contasReceber.php');
+    header('Location: ../contasReceber');
 
 $query = "DELETE FROM `nc_contas` where conta_id=?";
 $stmt = $mysqli->prepare($query);

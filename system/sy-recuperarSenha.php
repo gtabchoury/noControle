@@ -35,7 +35,7 @@ if ($stmt->fetch()){
 
     $mail->Subject  = "[noControle] Recupere sua senha"; // Assunto da mensagem
 
-    $msg="<p>Clique <b><a href='http://projects.conpec.com.br/nocontrole/pass-confirm.php?id=$hash'>neste link</a></b> para redefinir sua senha. </p>
+    $msg="<p>Clique <b><a href='http://vcnocontrole.com.br/pass-confirm?id=$hash'>neste link</a></b> para redefinir sua senha. </p>
 
     ";
 
@@ -48,11 +48,11 @@ if ($stmt->fetch()){
     $mail->ClearAttachments();
 
     if ($enviado) {
-      echo "<script>location.href='../recuperarSenha.php?success=1';</script>";
+      echo "<script>location.href='../recuperarSenha?success=1';</script>";
     } else {
-      echo "<script>location.href='../recuperarSenha.php?success=2';</script>";
+      echo "<script>location.href='../recuperarSenha?success=2';</script>";
     }
     
 }else{
-    echo "<script>location.href='../recuperarSenha.php?success=3';</script>";
+    echo "<script>location.href='../recuperarSenha?success=3';</script>";
 }

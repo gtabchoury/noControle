@@ -7,7 +7,7 @@ if (!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario_id'])){
-    header('Location: ../../login.php');
+    header('Location: ../../login');
     exit;
 }
 
@@ -15,7 +15,7 @@ if(!isset($_SESSION['usuario_id'])){
 if (isset($_POST['id']))
     $funcID = $_POST['id'];
 else
-    header('Location: ../contatos.php');
+    header('Location: ../contatos');
 
 $query = "DELETE FROM `nc_funcionarios` where func_id=?";
 $stmt = $mysqli->prepare($query);
@@ -23,9 +23,9 @@ $stmt->bind_param('i', $funcID);
 $stmt->execute();
 
 if ($stmt->affected_rows==1){
-    echo "<script> location.href='../funcionarios.php';</script>";
+    echo "<script> location.href='../funcionarios';</script>";
 }else{
-    echo "<script> location.href='../funcionarios.php;</script>";
+    echo "<script> location.href='../funcionarios;</script>";
 }
 
 $stmt->close();

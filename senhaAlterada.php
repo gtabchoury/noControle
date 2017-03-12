@@ -41,7 +41,7 @@ if (!isset($_SESSION)){
                         Sua senha foi atualizada com sucesso!
                     </div>
                     <div align="center">
-                        <a href="login.php"><button type="button" class="btn btn-primary">Fazer Login</button></a>
+                        <a href="login"><button type="button" class="btn btn-primary">Fazer Login</button></a>
                     </div>
                     </div>
                 </div>

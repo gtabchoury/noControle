@@ -129,7 +129,7 @@ if (!isset($_SESSION)){
                                 </div>
                                 <div class="form-group" align="center">
                                     <p>
-                                        <a href="recuperarSenha.php">Esqueci minha senha</a>
+                                        <a href="recuperarSenha">Esqueci minha senha</a>
                                     </p>
                                 </div>
                             </fieldset>

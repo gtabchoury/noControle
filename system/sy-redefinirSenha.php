@@ -31,17 +31,17 @@ if (isset($_POST['userPassword'])){
 
                 if ($stmt->affected_rows==1){
                     $_SESSION['emailRec']="";
-                    echo "<script> location.href='../senhaAlterada.php';</script>";
+                    echo "<script> location.href='../senhaAlterada';</script>";
                 }else{
                     $_SESSION['erroSenha']=2;
-                    echo "<script> location.href='../pass-confirm.php?erro=2';</script>";
+                    echo "<script> location.href='../pass-confirm?erro=2';</script>";
                 }
 
                 $stmt->close();
 
             }else{
                 $_SESSION['erroSenha']=1;
-                echo "<script> location.href='../pass-confirm.php?erro=1';</script>";
+                echo "<script> location.href='../pass-confirm?erro=1';</script>";
             }
         }
     }

@@ -68,7 +68,7 @@
                 <h1 id="homeHeading">No Controle</h1>
                 <hr>
                 <p>Sistema de gestão financeria online!</p>
-                <a href="login.php" class="btn btn-primary btn-xl page-scroll">Entrar</a>
+                <a href="login" class="btn btn-primary btn-xl page-scroll">Entrar</a>
             </div>
         </div>
     </header>

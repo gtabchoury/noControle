@@ -9,7 +9,7 @@ if (!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario_id'])){
-    header('Location: ../../login.php');
+    header('Location: ../../login');
     exit;
 }
 
@@ -17,11 +17,11 @@ $userConta=$_SESSION['usuario_id'];
 $tipoConta=$_GET['tipo'];
 
 if ($tipoConta=="R"){
-    $arquivo="contasReceber.php";
+    $arquivo="contasReceber";
 }
 
 if ($tipoConta=="P"){
-    $arquivo="contasPagar.php";
+    $arquivo="contasPagar";
 }
 
 $nomeConta = $_POST['nomeConta'];
