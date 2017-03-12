@@ -142,7 +142,6 @@
                                 </thead>
                                 <tbody>
                                 <?php include("painel-system/carregaContasPagar.php");?>
-                                <br>
                                 <br>  
                                 <div class="col-lg-10">                
                                     <?php  

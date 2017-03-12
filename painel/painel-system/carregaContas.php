@@ -124,10 +124,10 @@ echo "<br>
           <h4><p>R$$totalP</p><h4>
           </div>
         </div>
-      </div><br><br><br><br><br>
+      </div><br>
       
       ";
       echo "<div class='col-lg-12' align='center'>
 
-      <a href='painel-system/contas_caixa.php' class='btn btn-primary' target='_blank'>Gerar Arquivo PDF</a><br></div><br><br>";
+      <a href='painel-system/relatorioDeCaixa.php' class='btn btn-primary' target='_blank'>Gerar Relatório</a><br></div><br>";
       ?>

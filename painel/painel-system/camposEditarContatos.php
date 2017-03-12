@@ -32,16 +32,29 @@
             required/>
         </div>
     </div>
-    <div class="form-group col-lg-5" align='left'>
+    <?php if (strlen($doc)=="14") {?>
+    <div class="form-group col-lg-5" align='left' >
         <label class="control-label">CPF</label>
         <div class="input-group">
             <span class="input-group-addon">
                 <i class="fa fa-user"></i>
             </span>
-            <input value="<?php echo"$cpf";?>" type="text" name="cpfContato" class="form-control" placeholder="CPF" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
-            required/>
+            <input value="<?php echo"$doc";?>" type="text" name="docContato" class="form-control" placeholder="CPF" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
+            />
         </div>
-    </div>                              
+    </div>
+    <?php } else{?>
+    <div class="form-group col-lg-5" align='left'>
+        <label class="control-label">CNPJ</label>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+            </span>
+            <input value="<?php echo"$doc";?>" type="text" name="docContato" class="form-control" placeholder="CNPJ" maxlength="18" OnKeyPress="formatar('##.###.###/####-##', this)"
+            />
+        </div>
+    </div>
+    <?php }?>                         
 </div>
 <br>
 <div class="row">

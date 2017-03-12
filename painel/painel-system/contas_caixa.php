@@ -196,7 +196,7 @@ $codigoHTML = $codigoHTML . "
 <table align='center' width='70%'>
   <tr>
     <td align='center' style='color: #31b131'>
-      <h3><b>Contas a Receber</b></h3>
+      <h3><b>Total Recebido</b></h3>
       <h4><p>R$$totalR</p><h4>
       </td>
       <td align='center' style='color: #000000'>
@@ -204,7 +204,7 @@ $codigoHTML = $codigoHTML . "
         <h4><p>R$$total</p><h4>
         </td>
         <td align='center' style='color: #d9534f;'>
-          <h3><b>Contas a Pagar</b></h3>
+          <h3><b>Total Pago</b></h3>
           <h4><p>R$$totalP</p><h4>
           </td>
         </tr>

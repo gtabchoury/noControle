@@ -19,11 +19,22 @@ $nomeContato = $_POST['nomeContato'];
 $emailContato = $_POST['emailContato'];
 $telContato = $_POST['telContato'];
 $cpfContato = $_POST['cpfContato'];
+$cnpjContato = $_POST['cnpjContato'];
 $endContato = $_POST['endContato'];
 
-$query = "INSERT INTO `nc_contatos`(`contato_userID`, `contato_nome`, `contato_email`,`contato_telefone`, `contato_cpf`, `contato_endereco`) VALUES (?,?,?,?,?,?)";  
+$docContato = "";
+
+if ($cpfContato != ""){
+	$docContato = $cpfContato;
+}else{
+	if ($cnpjContato != ""){
+		$docContato = $cnpjContato;
+	}
+}
+
+$query = "INSERT INTO `nc_contatos`(`contato_userID`, `contato_nome`, `contato_email`,`contato_telefone`, `contato_doc`, `contato_endereco`) VALUES (?,?,?,?,?,?)";  
 $stmt = $mysqli->prepare($query);
-$stmt->bind_param('isssss',$userConta, $nomeContato, $emailContato, $telContato, $cpfContato, $endContato);
+$stmt->bind_param('isssss',$userConta, $nomeContato, $emailContato, $telContato, $docContato, $endContato);
 $stmt->execute();
 
 if ($stmt->affected_rows!=1){

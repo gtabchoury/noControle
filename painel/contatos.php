@@ -35,6 +35,30 @@
       }
       
     }
+
+    window.onload = function(){
+        document.getElementById("divCnpj").style.display = 'none';
+    }
+
+    function mudaDoc(){
+      var tipo = document.getElementById("tipoDoc");
+      var value = tipo.value;
+
+      if (value==1){
+        document.getElementById("divCnpj").style.display = 'none';
+        document.getElementById("divCpf").style.display = 'block';
+        document.getElementById("inputCpf").value = null;
+        document.getElementById("inputCnpj").value = null;
+      }else{
+        if(value==2){
+            document.getElementById("divCpf").style.display = 'none';
+            document.getElementById("divCnpj").style.display = 'block';
+            document.getElementById("inputCpf").value = null;
+            document.getElementById("inputCnpj").value = null;
+        }
+      }
+
+    }
     </script>
     
     <div id="wrapper">
@@ -74,7 +98,7 @@
                                         <th width="23%">Nome</th>
                                         <th width="23%">E-mail</th>
                                         <th width="17%">Telefone</th>
-                                        <th width="17%">CPF</th>
+                                        <th width="17%">Documento</th>
                                         <th width="8%">End.</th>
                                         <th width="12%">Ações</th>
                                     </tr>
@@ -132,12 +156,12 @@
                                                                 @
                                                             </span>
                                                             <input type="text" name="emailContato" class="form-control" placeholder="E-mail"
-                                                            required/>
+                                                            />
                                                         </div>
                                                     </div>                                  
                                                 </div>
                                                 <div class="row">
-                                                    <div class="form-group col-lg-5">
+                                                    <div class="form-group col-lg-4">
                                                         <label class="control-label">Telefone</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
@@ -147,14 +171,34 @@
                                                             required/>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group col-lg-5">
+                                                    <div class="form-group col-lg-2">
+                                                        <div class="form-group">
+                                                            <label>Documento</label>
+                                                            <select id="tipoDoc" onchange="mudaDoc()" class="form-control chosen" name="tipoDocumento">    
+                                                                <option value="1">CPF</option>
+                                                                <option value="2">CNPJ</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                 
+                                                    <div class="form-group col-lg-4" id="divCpf">
                                                         <label class="control-label">CPF</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
                                                                 <i class="fa fa-user"></i>
                                                             </span>
-                                                            <input type="text" name="cpfContato" class="form-control" placeholder="CPF" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
-                                                            required/>
+                                                            <input id="inputCpf" type="text" name="cpfContato" class="form-control" placeholder="CPF" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-lg-4" id="divCnpj">
+                                                        <label class="control-label">CNPJ</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-user"></i>
+                                                            </span>
+                                                            <input id="inputCnpj" type="text" name="cnpjContato" class="form-control" placeholder="CNPJ" maxlength="18" OnKeyPress="formatar('##.###.###/####-##', this)"
+                                                            />
                                                         </div>
                                                     </div>                              
                                                 </div>

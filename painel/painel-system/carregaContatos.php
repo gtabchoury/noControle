@@ -20,7 +20,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
   $telefone = $row['contato_telefone'];
   $endereco = $row['contato_endereco'];
   $endereco2 = $endereco;
-  $cpf = $row['contato_cpf'];
+  $doc = $row['contato_doc'];
 
   if ($endereco==""){
     $endereco = "$nome não possui um endereço cadastrado!";
@@ -31,7 +31,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     <td style='vertical-align: middle;'><font size='3px'>$nome</font></td>
     <td style='vertical-align: middle;'><font size='3px'>$email</font></td>
     <td style='vertical-align: middle;'><font size='3px'>$telefone</font></td>
-    <td style='vertical-align: middle;'><font size='3px'>$cpf</font></td>
+    <td style='vertical-align: middle;'><font size='3px'>$doc</font></td>
     <td style='vertical-align: middle;' align='center'>
       <a data-toggle='modal' data-target='#end$id'>
         <font color='#337ab7'><i class='fa fa-home btn btn-info'></i></font>

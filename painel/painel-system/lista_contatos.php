@@ -72,10 +72,10 @@ Lista de Contatos<br><br>
   <table width='100%'' class='table table-striped table-bordered table-hover ' align='center'>
     <thead>
       <tr align='left'>
-        <th width='30%'><font size='22px'>Nome</font></th>
+        <th width='25%'><font size='22px'>Nome</font></th>
         <th width='30%'><font size='22px'>E-mail</font></th>
         <th width='20%'><font size='22px'>Telefone</font></th>
-        <th width='20%'><font size='22px'>CPF</font></th>
+        <th width='25%'><font size='22px'>Documento</font></th>
       </tr>
     </thead>
     <tbody>
@@ -91,14 +91,14 @@ Lista de Contatos<br><br>
       $nome = $row['contato_nome'];
       $email = $row['contato_email'];
       $telefone = $row['contato_telefone'];
-      $cpf = $row['contato_cpf'];
+      $doc = $row['contato_doc'];
 
 
       $codigoHTML=$codigoHTML . "<tr>
       <td style='vertical-align: middle;'><font size='18px'>$nome</font></td>
       <td style='vertical-align: middle;'><font size='18px'>$email</font></td>
       <td style='vertical-align: middle;'><font size='18px'>$telefone</font></td>
-      <td style='vertical-align: middle;'><font size='18px'>$cpf</font></td>
+      <td style='vertical-align: middle;'><font size='18px'>$doc</font></td>
       ";
     }
 

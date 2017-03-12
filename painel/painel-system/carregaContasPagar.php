@@ -205,7 +205,7 @@ echo "<br>
           <h4><p>R$$total</p><h4>
           </div>
         </div>
-      </div><br><br><br><br><br>
+      </div>
       ";
-      echo "<div class='col-lg-12' align='center'><a href='painel-system/contas_a_pagar.php' class='btn btn-primary' target='_blank'>Gerar Arquivo PDF</a><br></div><br><br>";
+      echo "<div class='row' align='center'><div class='col-lg-12'><a href='painel-system/contas_a_pagar.php' class='btn btn-primary' target='_blank'>Gerar Arquivo PDF</a></div></div>";
       ?>

@@ -144,7 +144,6 @@
                                 <tbody>
                                 <?php include("painel-system/carregaContasReceber.php");?>
                                 <br>
-                                <br>  
                                 <div class="col-lg-10">                
                                     <?php  
 
