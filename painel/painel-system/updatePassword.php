@@ -23,16 +23,16 @@ if ($userSenha==$userSenha2){
     $stmt->execute();
 
     if ($stmt->affected_rows==1){
-        echo "<script> location.href='../configuracoes?ok=2';</script>";
+        echo "<script> location.href='../perfil?ok=2';</script>";
     }else{
         if ($stmt->affected_rows==0){
-            echo "<script> location.href='../configuracoes?ok=2';</script>";
+            echo "<script> location.href='../perfil?ok=2';</script>";
         }else{ 
-            echo "<script> location.href='../configuracoes?ok=3';</script>";
+            echo "<script> location.href='../perfil?ok=3';</script>";
         }
     }
 }else{
-    echo "<script> location.href='../configuracoes?ok=4';</script>";
+    echo "<script> location.href='../perfil?ok=4';</script>";
 }
 
 

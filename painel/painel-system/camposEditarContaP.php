@@ -59,6 +59,17 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="form-group col-lg-5" align="left">
+        <label class="control-label">Número do Documento</label>
+        <div class="input-group">
+            <span class="input-group-addon">
+                Nº
+            </span>
+            <input type="text" name="docConta" class="form-control" value="<?php echo"$doc";?>">
+        </div>
+    </div>
+</div>
 <br>
 <div class="row">
     <div class="form-group col-lg-8" align="left">                                       

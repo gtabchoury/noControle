@@ -193,7 +193,7 @@
                                             <form action="painel-system/addConta.php?tipo=R" method="POST" role="form">
                                                 <div class="row">
                                                     <div class="form-group col-lg-5">
-                                                        <label class="control-label">Nome</label>
+                                                        <label class="control-label">Nome*</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
                                                                 <i class="fa fa-font"></i>
@@ -215,7 +215,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-group col-lg-5">
-                                                        <label class="control-label">Valor</label>
+                                                        <label class="control-label">Valor*</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
                                                                 R$
@@ -226,7 +226,7 @@
                                                
                                                 
                                                     <div class="form-group col-lg-5">
-                                                        <label class="control-label">Data</label>
+                                                        <label class="control-label">Data*</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
                                                                 <i class="fa fa-calendar"></i>
@@ -245,7 +245,17 @@
                                                                 <?php include("painel-system/selectContatos.php"); ?>
                                                             </select>
                                                         </div>
-                                                    </div> 
+                                                    </div>
+                                                    <div class="form-group col-lg-5">
+                                                            <div class="form-group">
+                                                                <label>Conta associada</label>
+                                                                <select class="form-control chosen" name="assConta">             
+                                                                    <option>Selecione a conta</option>
+                                                                    <option>Caixa</option>
+                                                                    <option>Banco</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-group col-lg-10">                                       

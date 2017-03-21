@@ -27,6 +27,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $fonte = $fonteID;
     $valor = $row['conta_valor'];
     $status = $row['conta_status'];
+    $doc = $row['conta_documento'];
 
     $total = $total+$valor;
 

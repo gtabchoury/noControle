@@ -19,7 +19,7 @@
                         <i class="fa fa-user fa-fw"></i><?php echo "$userName "; ?><i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a>
+                        <li><a href="perfil"><i class="fa fa-user fa-fw"></i> Perfil</a>
                         </li>
                         <li><a href="configuracoes"><i class="fa fa-gear fa-fw"></i> Configurações</a>
                         </li>

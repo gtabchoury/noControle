@@ -32,6 +32,8 @@ if ($tipoConta=="P"){
 $nomeConta = $_POST['nomeConta'];
 $fonteConta = $_POST['fonteConta'];
 $valorConta = $_POST['valorConta'];
+$docConta = $_POST['docConta'];
+
 $valorConta = str_replace(",",".", $valorConta);
 
 if (isset($_POST['id']))
@@ -60,9 +62,9 @@ if ($tipoConta=="R" || $tipoConta=="P"){
 
     if ($userConta!=null && $tipoConta!=null && $nomeConta!=null && $valorConta!=null &&$dataConta!=null){
 
-        $query = "UPDATE `nc_contas` SET `conta_nome`=?,`conta_fonteID`=?,`conta_valor`=?,`conta_data`=?,`conta_status`=? WHERE conta_id=?;";  
+        $query = "UPDATE `nc_contas` SET `conta_nome`=?,`conta_fonteID`=?,`conta_valor`=?,`conta_data`=?,`conta_status`=?,`conta_documento`=? WHERE conta_id=?;";  
         $stmt = $mysqli->prepare($query);
-        $stmt->bind_param('sssssi',$nomeConta, $fonteConta, $valorConta, $dataConta, $statusConta, $idConta);
+        $stmt->bind_param('sssssis',$nomeConta, $fonteConta, $valorConta, $dataConta, $statusConta, $docConta, $idConta);
         $stmt->execute();
 
         if ($stmt->affected_rows==1){

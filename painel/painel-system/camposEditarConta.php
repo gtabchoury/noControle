@@ -55,7 +55,18 @@
             <span class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </span>
-            <input type="date" name="dataConta" class="form-control" value="<?php echo"$data";?>"required>
+            <input type="date" name="dataConta" class="form-control" value="<?php echo"$data";?>" required>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-lg-5" align="left">
+        <label class="control-label">Número do Documento</label>
+        <div class="input-group">
+            <span class="input-group-addon">
+                Nº
+            </span>
+            <input type="text" name="docConta" class="form-control" value="<?php echo"$doc";?>">
         </div>
     </div>
 </div>
