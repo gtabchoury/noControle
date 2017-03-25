@@ -20,6 +20,12 @@
             <li>
                 <a href="funcionarios"><i class="glyphicon glyphicon-user fa-fw"></i> Colaboradores</a>
             </li>
+            <li>
+                <a href="estoque"><i class="glyphicon glyphicon-align-justify fa-fw"></i> Estoque</a>
+            </li>
+            <li>
+                <a href="cartaoPonto"><i class="glyphicon glyphicon-book fa-fw"></i> Cartão de Ponto</a>
+            </li>
             
         </ul>
     </div>
