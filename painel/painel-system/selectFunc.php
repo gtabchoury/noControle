@@ -1,22 +1,25 @@
 <?php
 
 ini_set('default_charset','UTF-8');
+
 include("../../system/sy-conexao.php");
 
-$func = $_POST['id'];
+$id = $_POST['id'];
+$_SESSION['idFuncCP']=$id;
 
-
-$query = "SELECT func_salario from nc_funcionarios WHERE func_id=?";
+$query = "SELECT func_salario from nc_funcionarios WHERE func_id=? ";
 $stmt = $mysqli->prepare($query);
-$stmt->bind_param('i', $func);
+$stmt->bind_param('i', $id);
 $stmt->execute();
-$stmt->bind_result($res);
+$stmt->bind_result($salarioF);
 
-if ($stmt->fetch()){
-  $res =number_format($res,2,',','');
-  echo "$res";
+if (!$stmt->fetch()){
+	echo false;
 }else{
-  return false;
+	$salarioF =number_format($salarioF,2,',','');
+	echo "$salarioF";
 }
+
+$stmt->close();
 
 ?>
