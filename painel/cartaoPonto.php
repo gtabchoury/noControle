@@ -58,7 +58,7 @@ $anoAtual = date('Y');
             </div>
             <!-- /.row -->
             <div class="row">
-
+                <form action="painel-system/addPonto.php" method="POST" role="form">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group col-lg-3">
@@ -149,13 +149,12 @@ $anoAtual = date('Y');
                     </div>
                 </div>
                 <div class="col-lg-12">
-                <form action="painel-system/addPonto.php" method="POST" role="form">
                 <input class="btn btn-primary rap" onclick="addDia()" type="hidden" value="Adicionar dia">
                 </div>
 
                 <div id="btnFinaliza" class="col-lg-12">
                 <br>
-                <input class="btn btn-success rap" type="submit" value="Finalizar Ponto">
+                <input id="btnFinaliza" class="btn btn-success rap" type="submit" value="Finalizar Ponto">
                 </form>
                 <br>
                 <br>
@@ -240,6 +239,10 @@ $anoAtual = date('Y');
                             node.parentNode.removeChild(node);
                         }
                     }
+                    var node = document.getElementById("divNumDias");
+                    if (node.parentNode) {
+                        node.parentNode.removeChild(node);
+                    }
                 }
                 dia=0;
                 return;
@@ -267,6 +270,7 @@ $anoAtual = date('Y');
             for (var i=0;i<totalDias;i++){
                 addDia();
             }
+            addInput();
         }
 
         function daysInMonth(month,year) {
@@ -295,10 +299,16 @@ $anoAtual = date('Y');
                     HTMLNovo += dia;
                     HTMLNovo += '"><div id="data" class="form-group col-lg-2">';
                     HTMLNovo += '<div class="form-group" align="center">';
-                    HTMLNovo += '<input type="text" value="';
+                    HTMLNovo += '<input type="hidden" name="dataDia';
+                    HTMLNovo += dia;
+                    HTMLNovo += '" value="';
                     HTMLNovo += data;
-                    HTMLNovo += '" maxlength="2" disabled class="form-control">';
-                    HTMLNovo += '</div>';
+                    HTMLNovo += '">';
+                    HTMLNovo += '<input type="text" disabled class="form-control" name="data';
+                    HTMLNovo += dia;
+                    HTMLNovo += '" value="';
+                    HTMLNovo += data;
+                    HTMLNovo += '"></div>';
                     HTMLNovo += '</div>';
                     HTMLNovo += '<div id="dia" class="form-group col-lg-2">';
                     HTMLNovo += '<div class="form-group" align="center">';
@@ -309,24 +319,40 @@ $anoAtual = date('Y');
                     HTMLNovo += '</div>';
                     HTMLNovo += '<div id="entrada" class="form-group col-lg-2">';
                     HTMLNovo += '<div class="form-group" align="center">';
-                    HTMLNovo += '<input required type="time" class="form-control">';
-                    HTMLNovo += '</div>';
+                    HTMLNovo += '<input type="time" class="form-control" name="entradaManha';
+                    HTMLNovo += dia;
+                    HTMLNovo += '"></div>';
                     HTMLNovo += '</div>';
                     HTMLNovo += '<div id="saida" class="form-group col-lg-2">';
                     HTMLNovo += '<div class="form-group" align="center">';
-                    HTMLNovo += '<input required type="time"  class="form-control">';
-                    HTMLNovo += '</div>';
+                    HTMLNovo += '<input type="time" class="form-control" name="saidaManha';
+                    HTMLNovo += dia;
+                    HTMLNovo += '"></div>';
                     HTMLNovo += '</div>';
                     HTMLNovo += '<div id="entrada2" class="form-group col-lg-2">';
                     HTMLNovo += '<div class="form-group" align="center">';
-                    HTMLNovo += '<input required type="time" class="form-control">';
-                    HTMLNovo += '</div>';
+                    HTMLNovo += '<input type="time" class="form-control" name="entradaTarde';
+                    HTMLNovo += dia;
+                    HTMLNovo += '"></div>';
                     HTMLNovo += '</div>';
                     HTMLNovo += '<div id="saida2" class="form-group col-lg-2">';
                     HTMLNovo += '<div class="form-group" align="center">';
-                    HTMLNovo += '<input required type="time"  class="form-control">';
+                    HTMLNovo += '<input type="time" class="form-control" name="saidaTarde';
+                    HTMLNovo += dia;
+                    HTMLNovo += '"></div>';
                     HTMLNovo += '</div>';
                     HTMLNovo += '</div>';
+
+                $rap.insertAdjacentHTML('beforebegin', HTMLNovo);
+
+            }
+
+            function addInput(){
+                var $rap = document.querySelector('.rap'),
+                    HTMLNovo = '<div id="divNumDias">';
+                    HTMLNovo += '<input type="hidden" id="numDias" name="numDias" value="';
+                    HTMLNovo += dia;
+                    HTMLNovo += '">';
                     HTMLNovo += '</div>';
 
                 $rap.insertAdjacentHTML('beforebegin', HTMLNovo);
