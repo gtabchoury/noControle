@@ -33,6 +33,17 @@ $nomeConta = $_POST['nomeConta'];
 $fonteConta = $_POST['fonteConta'];
 $valorConta = $_POST['valorConta'];
 $docConta = $_POST['docConta'];
+$assConta = $_POST['assConta'];
+
+if ($assConta=="Caixa"){
+    $assConta="C";
+}else{
+    if ($assConta=="Banco"){
+        $assConta="B";
+    }else{
+        $assConta="U";
+    }
+}
 
 $valorConta = str_replace(",",".", $valorConta);
 
@@ -62,9 +73,9 @@ if ($tipoConta=="R" || $tipoConta=="P"){
 
     if ($userConta!=null && $tipoConta!=null && $nomeConta!=null && $valorConta!=null &&$dataConta!=null){
 
-        $query = "UPDATE `nc_contas` SET `conta_nome`=?,`conta_fonteID`=?,`conta_valor`=?,`conta_data`=?,`conta_status`=?,`conta_documento`=? WHERE conta_id=?;";  
+        $query = "UPDATE `nc_contas` SET `conta_nome`=?,`conta_fonteID`=?,`conta_valor`=?,`conta_data`=?,`conta_status`=?,`conta_documento`=?,`conta_associada`=?  WHERE conta_id=?;";  
         $stmt = $mysqli->prepare($query);
-        $stmt->bind_param('sssssis',$nomeConta, $fonteConta, $valorConta, $dataConta, $statusConta, $docConta, $idConta);
+        $stmt->bind_param('sisssssi',$nomeConta, $fonteConta, $valorConta, $dataConta, $statusConta, $docConta, $assConta, $idConta);
         $stmt->execute();
 
         if ($stmt->affected_rows==1){

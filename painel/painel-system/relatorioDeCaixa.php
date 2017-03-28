@@ -69,11 +69,26 @@ switch ($mesAtual) {
 include  'phpexcel/Classes/PHPExcel.php';
 include("../../system/sy-conexao.php");
 
+$query = "SELECT user_saldoCaixa, user_saldoBanco from nc_users WHERE user_id=? ";
+$stmt = $mysqli->prepare($query);
+$stmt->bind_param('i', $userID);
+$stmt->execute();
+$stmt->bind_result($sCaixa, $sBanco);
+
+$stmt->fetch();
+
+$stmt->close();
+
 // Instanciamos a classe
 $objPHPExcel = new PHPExcel();
 
 // Definimos o estilo da fonte
 $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+
+$sTotal = $sCaixa + $sBanco;
+$ssBanco =number_format($sBanco,2,',','');
+$ssCaixa =number_format($sCaixa,2,',','');
+$ssTotal =number_format($sTotal,2,',','');
 
 // Criamos as colunas
 $objPHPExcel->setActiveSheetIndex(0)
@@ -83,12 +98,15 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue("A4", "Saldo Inicial Banco" )
             ->setCellValue("A5", "Saldo Inicial Caixa" )
             ->setCellValue("A6", "Total" )
+            ->setCellValue("C4", "$".$ssBanco )
+            ->setCellValue("C5", "$".$ssCaixa )
+            ->setCellValue("C6", "$".$ssTotal )
             ->setCellValue("A8", "Data" )
             ->setCellValue("B8", "Entrada" )
             ->setCellValue("C8", "Nº do documento" )
             ->setCellValue("D8", "Débito" )
             ->setCellValue("E8", "Crédito" )
-            ->setCellValue("F8", "Saldo" );
+            ->setCellValue("F8", "Balanço" );
 
 // Podemos configurar diferentes larguras paras as colunas como padrão
 $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
@@ -146,19 +164,14 @@ $objPHPExcel->getActiveSheet()->getStyle('B2')->getFont()->getColor()->setARGB(P
 
 $objPHPExcel->getActiveSheet()->getStyle('A1:F200')->getFont()->setName('Arial');
 
-$objPHPExcel->getActiveSheet()->getStyle('C4')->getNumberFormat()->setFormatCode("$#,##0.00");
-$objPHPExcel->getActiveSheet()->getStyle('C5')->getNumberFormat()->setFormatCode("$#,##0.00");
-$objPHPExcel->getActiveSheet()->getStyle('C6')->getNumberFormat()->setFormatCode("$#,##0.00");
 
 // INSERINDO DADOS
 
-// SALDOS INICIAIS
-$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, 4, 0);
-$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, 5, 0);
-$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, 6, 0);
 
 // RELATORIO
 $x=9;
+$totalCaixa = 0;
+$totalBanco = 0;
 
 $query = "SELECT * FROM nc_contas WHERE conta_userID=$userID ORDER BY conta_data;";
 $result = mysqli_query($mysqli, $query);
@@ -179,7 +192,34 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $desc = $row['conta_nome'];
     $fonteID = $row['conta_fonteID'];
     $doc = $row['conta_documento'];
+    $ass = $row['conta_associada'];
+    $tipo = $row['conta_tipo'];
 
+    if ($ass=="B"){
+      if ($tipo=="P"){
+        $totalBanco = $totalBanco - $valor;
+      }else{
+        $totalBanco = $totalBanco + $valor;
+      }
+    } 
+
+    if ($ass=="C"){
+      if ($tipo=="P"){
+        $totalCaixa = $totalCaixa - $valor;
+      }else{
+        $totalCaixa = $totalCaixa + $valor;
+      }
+    }
+
+    if ($ass=="B"){
+      $ass=" - Banco";
+    }else{
+      if ($ass=="C"){
+        $ass=" - Caixa";
+      }else{
+        $ass="";
+      }
+    }
     if ($fonteID!=null){
       $query = "SELECT contato_nome from nc_contatos WHERE contato_id=? ";
       $stmt = $mysqli->prepare($query);
@@ -196,7 +236,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
       $stmt->close();
     }
 
-    $tipo = $row['conta_tipo'];
+    $desc = $desc.$ass;
 
     if ($tipo=="P"){
       $debito = $valor;
@@ -315,13 +355,13 @@ $objPHPExcel->getActiveSheet()->getStyle('A'.$y.':C'.$y)->applyFromArray($styleA
 unset($styleArray);
 
 $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(0, $x, "Saldo Final Banco");
-$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, $x, 0);
+$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, $x, ($sBanco+$totalBanco));
 $x++;
 $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(0, $x, "Saldo Final Caixa");
-$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, $x, 0);
+$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, $x, ($sCaixa+$totalCaixa));
 $x++;
 $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(0, $x, "Total");
-$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, $x, 0);
+$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, $x, ($sBanco+$totalBanco+$sCaixa+$totalCaixa));
 
 
 // Podemos renomear o nome das planilha atual, lembrando que um único arquivo pode ter várias planilhas

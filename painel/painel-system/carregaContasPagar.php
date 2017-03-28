@@ -28,6 +28,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $valor = $row['conta_valor'];
     $status = $row['conta_status'];
     $doc = $row['conta_documento'];
+    $contaAss = $row['conta_associada'];
 
     $total = $total+$valor;
 
