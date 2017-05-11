@@ -11,7 +11,7 @@ $totalP = 0;
 $saldo = 0;
 
 date_default_timezone_set('America/Sao_Paulo');
-$mesAtual = date('m');
+
 
 $query = "SELECT * FROM nc_contas WHERE conta_userID=$userID ORDER BY conta_data;";
 $result = mysqli_query($mysqli, $query);
@@ -23,8 +23,9 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
   $data = $row['conta_data'];
   $mesConta = date('m', strtotime($data));
+  $anoConta = date('Y', strtotime($data));
   
-  if ($mesAtual == $mesConta){
+  if ($mes == $mesConta && $ano == $anoConta){
     $status = $row['conta_status'];
 
     if($status==1){

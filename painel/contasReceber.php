@@ -16,6 +16,19 @@
     $mesAtual = date('m');
     $anoAtual = date('Y');
     
+    $mes = $mesAtual;
+    $ano = $anoAtual;
+
+    if (isset($_GET['m'])){
+        $mes=$_GET['m'];
+    }
+
+    if (isset($_GET['y'])){
+        $ano=$_GET['y'];
+    }
+
+    $mesAtual=$mes;
+    $anoAtual=$ano;
     switch ($mesAtual) {
         case '01':
             $mesAtual = "Janeiro";

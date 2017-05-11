@@ -30,7 +30,7 @@ if (!isset($_SESSION)){
         $stmt->execute();
         
         if ($stmt->fetch()){
-            //echo "<script>location.href='inicio.php';</script>";
+            echo "<script>location.href='painel/inicio';</script>";
         }else{
             session_destroy();
             header('location:login.php');
@@ -54,7 +54,7 @@ if (!isset($_SESSION)){
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-offset-0 col-sm-6 col-md-4 col-lg-4 col-xs-12">
                 <div class="login-panel panel panel-default">
                     <div class="panel-body">
                     <div align="center">
@@ -99,7 +99,7 @@ if (!isset($_SESSION)){
                             <fieldset>
                                 <br>
                                 <div class="form-group">
-                                    <div class="input-group">
+                                    <div class="input-group col-sm-12 col-md-12 col-lg-12 col-xs-12">
                                         <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-user"></i>
                                         </span>
@@ -107,7 +107,7 @@ if (!isset($_SESSION)){
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="input-group">
+                                    <div class="input-group col-sm-12 col-md-12 col-lg-12 col-xs-12">
                                         <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-lock"></i>
                                         </span>
@@ -115,19 +115,19 @@ if (!isset($_SESSION)){
                                     </div>
                                 </div>
                                 <div class="form-group" align="center">
-                                    <div class="row">
-                                        <div class="col-lg-2">
-                                            
-                                        </div>
-                                        <div class="col-lg-8">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+                                    </div>
+                                    <div class="col-sm-8 col-md-8 col-lg-8 col-xs-8">
+                                        <div class=>
                                             <button type="submit" class="btn btn-success btn-block">Entrar</button>
                                         </div>
-                                        <div class="col-lg-2">
-                                            
-                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
                                     </div>
                                 </div>
-                                <div class="form-group" align="center">
+                                <br>
+                                <br>
+                                <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xs-12" align="center">
                                     <p>
                                         <a href="recuperarSenha">Esqueci minha senha</a>
                                     </p>
