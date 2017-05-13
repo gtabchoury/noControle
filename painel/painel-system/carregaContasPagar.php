@@ -211,5 +211,5 @@ echo "<br>
         </div>
       </div>
       ";
-      echo "<div class='row' align='center'><div class='col-lg-12'><a href='painel-system/contas_a_pagar.php' class='btn btn-primary' target='_blank'>Gerar Arquivo PDF</a></div></div>";
+      echo "<div class='row' align='center'><div class='col-lg-12'><a href='painel-system/contas_a_pagar.php?m=$mes&y=$ano' class='btn btn-primary' target='_blank'>Gerar Arquivo PDF</a></div></div>";
       ?>

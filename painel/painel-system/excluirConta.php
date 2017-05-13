@@ -36,9 +36,9 @@ $stmt->bind_param('i', $contaID);
 $stmt->execute();
 
 if ($stmt->affected_rows==1){
-    echo "<script> location.href='../$arquivo';</script>";
+    echo "<script> location.href='javascript:history.back()';</script>";
 }else{
-    echo "<script> location.href='../$arquivo';</script>";
+    echo "<script> location.href='javascript:history.back()';</script>";
 }
 
 $stmt->close();

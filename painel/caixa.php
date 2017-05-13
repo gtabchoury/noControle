@@ -11,11 +11,26 @@
     }
     
     $userName=$_SESSION['usuario_nome'];
+    $userID = $_SESSION['usuario_id'];
 
     date_default_timezone_set('America/Sao_Paulo');
     $mesAtual = date('m');
     $anoAtual = date('Y');
     
+    $mes = $mesAtual;
+    $ano = $anoAtual;
+
+    if (isset($_GET['m'])){
+        $mes=$_GET['m'];
+    }
+
+    if (isset($_GET['y'])){
+        $ano=$_GET['y'];
+    }
+
+    $mesAtual=$mes;
+    $anoAtual=$ano;
+
     switch ($mesAtual) {
         case '01':
             $mesAtual = "Janeiro";
@@ -58,7 +73,8 @@
             $mesAtual = "";
             break;
     }
-      
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,24 +110,53 @@
                     <div class="row">
                         <div class="form-group col-lg-5">
                             <div class="col-lg-5">
-                                <select class="form-control chosen" name="fonteConta">        
-                                    <option <?php if ($mesAtual=="Janeiro"){echo "selected";}?>>Janeiro</option>
-                                    <option <?php if ($mesAtual=="Fevereiro"){echo "selected";}?>>Fevereiro</option>
-                                    <option <?php if ($mesAtual=="Março"){echo "selected";}?>>Março</option>
-                                    <option <?php if ($mesAtual=="Abril"){echo "selected";}?>>Abril</option>
-                                    <option <?php if ($mesAtual=="Maio"){echo "selected";}?>>Maio</option>
-                                    <option <?php if ($mesAtual=="Junho"){echo "selected";}?>>Junho</option>
-                                    <option <?php if ($mesAtual=="Julho"){echo "selected";}?>>Julho</option>
-                                    <option <?php if ($mesAtual=="Agosto"){echo "selected";}?>>Agosto</option>
-                                    <option <?php if ($mesAtual=="Setembro"){echo "selected";}?>>Setembro</option>
-                                    <option <?php if ($mesAtual=="Outubro"){echo "selected";}?>>Outubro</option>
-                                    <option <?php if ($mesAtual=="Novembro"){echo "selected";}?>>Novembro</option>
-                                    <option <?php if ($mesAtual=="Dezembro"){echo "selected";}?>>Dezembro</option>
+                                <select onchange="location.href='?m='+this.value+'&y='+document.getElementById('anoContas').value;" id="mesContas" class="form-control chosen" name="mesContas">        
+                                    <option value="1" <?php if ($mesAtual=="Janeiro"){echo "selected";}?>>Janeiro</option>
+                                    <option value="2" <?php if ($mesAtual=="Fevereiro"){echo "selected";}?>>Fevereiro</option>
+                                    <option value="3" <?php if ($mesAtual=="Março"){echo "selected";}?>>Março</option>
+                                    <option value="4" <?php if ($mesAtual=="Abril"){echo "selected";}?>>Abril</option>
+                                    <option value="5" <?php if ($mesAtual=="Maio"){echo "selected";}?>>Maio</option>
+                                    <option value="6" <?php if ($mesAtual=="Junho"){echo "selected";}?>>Junho</option>
+                                    <option value="7" <?php if ($mesAtual=="Julho"){echo "selected";}?>>Julho</option>
+                                    <option value="8" <?php if ($mesAtual=="Agosto"){echo "selected";}?>>Agosto</option>
+                                    <option value="9" <?php if ($mesAtual=="Setembro"){echo "selected";}?>>Setembro</option>
+                                    <option value="10" <?php if ($mesAtual=="Outubro"){echo "selected";}?>>Outubro</option>
+                                    <option value="11" <?php if ($mesAtual=="Novembro"){echo "selected";}?>>Novembro</option>
+                                    <option value="12" <?php if ($mesAtual=="Dezembro"){echo "selected";}?>>Dezembro</option>
                                 </select>
                             </div>
                             <div class="col-lg-4">
-                                <select class="form-control chosen" name="fonteConta">        
-                                    <option><?php echo "$anoAtual"; ?></option>
+                                <select onchange="location.href='?m='+document.getElementById('mesContas').value+'&y='+this.value;" class="form-control chosen" name="anoContas" id="anoContas">        
+                                    <?php
+                                    $query = "SELECT * FROM nc_contas WHERE conta_userID=$userID ORDER BY conta_data;";
+                                    $result = mysqli_query($mysqli, $query);
+                                    $rowcount=mysqli_num_rows($result);
+
+                                    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                                        $data = $row['conta_data'];
+                                        $menorAno = date('Y', strtotime($data));
+                                        break;
+                                    }
+
+                                    $query = "SELECT * FROM nc_contas WHERE conta_userID=$userID ORDER BY conta_data DESC;";
+                                    $result = mysqli_query($mysqli, $query);
+                                    $rowcount=mysqli_num_rows($result);
+
+                                    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                                        $data = $row['conta_data'];
+                                        $maiorAno = date('Y', strtotime($data));
+                                        break;
+                                    }
+
+                                    
+                                    for ($i=$menorAno;$i<=$maiorAno;$i++){
+                                        if ($i==$anoAtual){
+                                            echo "<option selected>$i</option>";
+                                        }else{
+                                            echo "<option>$i</option>";
+                                        }
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>                               

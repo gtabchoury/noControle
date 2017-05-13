@@ -50,10 +50,10 @@ $valorConta = str_replace(",",".", $valorConta);
 if (isset($_POST['id']))
     $idConta = $_POST['id'];
 else
-    echo "<script> location.href='../$arquivo';</script>";
+    echo "<script> location.href='javascript:history.back()';</script>";
 
 if ($valorConta==0){
-    echo "<script> location.href='../$arquivo';</script>";
+    echo "<script> location.href='javascript:history.back()';</script>";
 }
 
 $dataConta = $_POST['dataConta'];
@@ -79,9 +79,9 @@ if ($tipoConta=="R" || $tipoConta=="P"){
         $stmt->execute();
 
         if ($stmt->affected_rows==1){
-            echo "<script> location.href='../$arquivo';</script>";
+            echo "<script> location.href='javascript:history.back()';</script>";
         }else{
-            echo "<script> location.href='../$arquivo';</script>";
+            echo "<script> location.href='javascript:history.back()';</script>";
         }
 
         $stmt->close();
@@ -89,11 +89,11 @@ if ($tipoConta=="R" || $tipoConta=="P"){
         exit;
 
     }else{
-        echo "<script> location.href='../$arquivo';</script>";
+        echo "<script> location.href='javascript:history.back()';</script>";
     }
 
 }else{
-    echo "<script> location.href='../$arquivo';</script>";
+    echo "<script> location.href='javascript:history.back()';</script>";
 }
 
 

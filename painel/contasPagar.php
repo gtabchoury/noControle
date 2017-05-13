@@ -11,6 +11,7 @@
     }
     
     $userName=$_SESSION['usuario_nome'];
+    $userID = $_SESSION['usuario_id'];
 
     date_default_timezone_set('America/Sao_Paulo');
     $mesAtual = date('m');
@@ -126,11 +127,36 @@
                             </div>
                             <div class="col-lg-4">
                                 <select onchange="location.href='?m='+document.getElementById('mesContas').value+'&y='+this.value;" class="form-control chosen" name="anoContas" id="anoContas">        
-                                    <option>2014</option>
-                                    <option>2015</option>
-                                    <option>2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
+                                    <?php
+                                    $query = "SELECT * FROM nc_contas WHERE conta_userID=$userID AND conta_tipo='P' ORDER BY conta_data;";
+                                    $result = mysqli_query($mysqli, $query);
+                                    $rowcount=mysqli_num_rows($result);
+
+                                    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                                        $data = $row['conta_data'];
+                                        $menorAno = date('Y', strtotime($data));
+                                        break;
+                                    }
+
+                                    $query = "SELECT * FROM nc_contas WHERE conta_userID=$userID AND conta_tipo='P' ORDER BY conta_data DESC;";
+                                    $result = mysqli_query($mysqli, $query);
+                                    $rowcount=mysqli_num_rows($result);
+
+                                    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                                        $data = $row['conta_data'];
+                                        $maiorAno = date('Y', strtotime($data));
+                                        break;
+                                    }
+
+                                    
+                                    for ($i=$menorAno;$i<=$maiorAno;$i++){
+                                        if ($i==$anoAtual){
+                                            echo "<option selected>$i</option>";
+                                        }else{
+                                            echo "<option>$i</option>";
+                                        }
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>                               

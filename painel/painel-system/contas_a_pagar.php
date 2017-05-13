@@ -18,8 +18,17 @@ $total = 0;
 date_default_timezone_set('America/Sao_Paulo');
 $name = date('dmYHis');
 $date = date('d/m/Y - H:i');
+
 $mesAtual = date('m');
 $anoAtual = date('Y');
+
+if (isset($_GET['m'])){
+  $mesAtual=$_GET['m'];
+}
+
+if (isset($_GET['y'])){
+  $anoAtual=$_GET['y'];
+}
 
 switch ($mesAtual) {
     case '01':
@@ -92,8 +101,9 @@ Pagamentos de <b>$mAtual de $anoAtual</b><br><br><br>
            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
              $data = $row['conta_data'];
              $mesConta = date('m', strtotime($data));
-
-             if ($mesAtual == $mesConta){
+             $anoConta = date('Y', strtotime($data));
+             
+             if ($mesAtual == $mesConta && $anoAtual == $anoConta){
                 $id = $row['conta_id'];
                 $nome = $row['conta_nome'];
                 $fonteID = $row['conta_fonteID'];

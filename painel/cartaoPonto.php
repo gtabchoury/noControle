@@ -123,18 +123,18 @@ $anoAtual = date('Y');
                             
                         </div>
                         <div class="col-lg-4">
-                            <h3>Manhã</3>
+                            <h3>1º Período</3>
                         </div>
                         <div class="col-lg-4">
-                            <h3>Tarde</h3>
+                            <h3>2º Período</h3>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <h4>Data</h4>
                         </div>
-                        <div class="col-lg-2">
-                            <h4>Dia</h4>
+                        <div class="col-lg-1">
+                            <h4>Obs.</h4>
                         </div>
                         <div class="col-lg-2">
                             <h4>Entrada</h4>
@@ -299,7 +299,7 @@ $anoAtual = date('Y');
                 var $rap = document.querySelector('.rap'),
                     HTMLNovo = '<div class="row" align="left" id="linhaDia';
                     HTMLNovo += dia;
-                    HTMLNovo += '"><div id="data" class="form-group col-lg-2">';
+                    HTMLNovo += '"><div id="data" class="form-group col-lg-3">';
                     HTMLNovo += '<div class="form-group" align="center">';
                     HTMLNovo += '<input type="hidden" name="dataDia';
                     HTMLNovo += dia;
@@ -309,14 +309,15 @@ $anoAtual = date('Y');
                     HTMLNovo += '<input type="text" disabled class="form-control" name="data';
                     HTMLNovo += dia;
                     HTMLNovo += '" value="';
-                    HTMLNovo += data;
+                    HTMLNovo += data+" ("+diaSemana+")";
                     HTMLNovo += '"></div>';
                     HTMLNovo += '</div>';
-                    HTMLNovo += '<div id="dia" class="form-group col-lg-2">';
+                    HTMLNovo += '<div id="obs" class="form-group col-lg-1">';
                     HTMLNovo += '<div class="form-group" align="center">';
-                    HTMLNovo += '<input type="text" value="';
-                    HTMLNovo += diaSemana;
-                    HTMLNovo += '" maxlength="2" disabled class="form-control">';
+                    HTMLNovo += '<select class="form-control chosen" name="obs';
+                    HTMLNovo += dia;
+                    HTMLNovo += '">';
+                    HTMLNovo += '<option value="1">--</option><option value="2">Falta</option><option value="3">Atestado</option><option value="4">Descanso</option></select>';
                     HTMLNovo += '</div>';
                     HTMLNovo += '</div>';
                     HTMLNovo += '<div id="entrada" class="form-group col-lg-2">';
